@@ -1,8 +1,8 @@
-#include "ground.h"
+#include "tile.h"
 #include "main.h"
 
 
-Ground::Ground(float x, float y, color_t color )
+Tile::Tile(float x, float y, color_t color )
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
@@ -23,7 +23,7 @@ Ground::Ground(float x, float y, color_t color )
     this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, color, GL_FILL);
 }
 
-void Ground::draw(glm::mat4 VP) {
+void Tile::draw(glm::mat4 VP) {
     Matrices.model = glm::mat4(1.0f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
     glm::mat4 rotate    = glm::rotate((float) (this->rotation * M_PI / 180.0f), glm::vec3(1, 0, 0));
@@ -35,11 +35,11 @@ void Ground::draw(glm::mat4 VP) {
     draw3DObject(this->object);
 }
 
-void Ground::set_position(float x, float y) {
+void Tile::set_position(float x, float y) {
     this->position = glm::vec3(x, y, 0);
 }
 
-void Ground::tick() {
+void Tile::tick() {
     // this->position.x -= 0.001;
 }
 

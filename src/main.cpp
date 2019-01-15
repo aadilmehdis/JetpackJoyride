@@ -5,6 +5,9 @@
 #include "player.h"
 #include "boomerang.h"
 #include "ground.h"
+#include "tile.h"
+#include "window.h"
+
 
 #include <vector>
 
@@ -27,6 +30,9 @@ long long int Frame=0;
 
 vector<FireLine> fire_lines;
 vector<Boomerang> boomerangs;
+vector<Window> windows;
+vector<Tile> tiles;
+
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -67,8 +73,17 @@ void draw() {
     // Scene render
     // ball1.draw(VP);
     // ball2.draw(VP);
-    player.draw(VP);
     ground.draw(VP);
+    for(int i=0; i<windows.size(); ++i)
+    {
+        windows[i].draw(VP);
+    }
+    for(int i=0; i<tiles.size(); ++i)
+    {
+        tiles[i].draw(VP);
+    }
+    player.draw(VP);
+
     for(int i=0;i<fire_lines.size();++i)
     {
         fire_lines[i].draw(VP);
@@ -77,6 +92,7 @@ void draw() {
     {
         boomerangs[i].draw(VP);
     }
+
 }
 
 void tick_input(GLFWwindow *window) {
@@ -124,6 +140,20 @@ void update_object_vectors() {
             boomerangs.erase(boomerangs.begin() + i );
         }
     }  
+    for(int i=0;i<windows.size();++i)
+    {
+        if(windows[i].position.x < -15)
+        {
+            windows.erase(windows.begin() + i );
+        }
+    }
+    for(int i=0;i<tiles.size();++i)
+    {
+        if(tiles[i].position.x < -10)
+        {
+            tiles.erase(tiles.begin() + i );
+        }
+    }
 }
 
 void spawn_fire_lines() {
@@ -142,6 +172,31 @@ void spawn_boomerangs() {
     }
 }
 
+void spawn_windows() {
+    if(Frame%500 == 0)
+    {
+
+        windows.push_back(Window(5, -1.5, COLOR_GREEN));
+    }
+}
+
+void spawn_tiles() {
+    if(Frame%50 == 0)
+    {
+        int y_pos = rand()%10 + (-2);
+        tiles.push_back(Tile(5, y_pos, COLOR_GREEN));
+    }
+}
+
+void spawn_game_elements() {
+    // spawn_fire_lines();
+    // spawn_boomerangs();
+    spawn_windows();
+    spawn_tiles();
+
+}
+
+
 void tick_elements() {
     // ball1.tick();
     // ball2.tick();
@@ -155,6 +210,14 @@ void tick_elements() {
     {
         boomerangs[i].tick();
     }
+    for(int i=0;i<windows.size();++i)
+    {
+        windows[i].tick();
+    }
+    for(int i=0;i<tiles.size();++i)
+    {
+        tiles[i].tick();
+    }
     camera_rotation_angle += 1;
 }
 
@@ -166,6 +229,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     player = Player(0, 0, COLOR_BLACK);
     ground = Ground(-4, -4, COLOR_BLACK);
+    windows.push_back(Window(0, -1.5, COLOR_GREEN));
     // ball1       = FireLine(0, 0, COLOR_RED);
     // ball2       = FireLine(0.5, 0.5, COLOR_GREEN);
     // fire_lines.push_back(FireLine(0, 0, COLOR_RED));
@@ -218,8 +282,8 @@ int main(int argc, char **argv) {
 
 
             update_object_vectors();
-            spawn_fire_lines();
-            spawn_boomerangs();
+            spawn_game_elements();
+
             ++Frame;
 
 

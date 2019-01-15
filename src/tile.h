@@ -1,13 +1,13 @@
 #include "main.h"
 
-#ifndef GROUND_H
-#define GROUND_H
+#ifndef TILE_H
+#define TILE_H
 
 
-class Ground {
+class Tile {
 public:
-    Ground() {}
-    Ground(float x, float y, color_t color );
+    Tile() {}
+    Tile(float x, float y, color_t color );
     glm::vec3 position;
 
     void draw(glm::mat4 VP);

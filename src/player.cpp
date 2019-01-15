@@ -41,7 +41,7 @@ void Player::set_position(float x, float y) {
 void Player::tick() {
     this->position.y -= dy;
     this->position.x -= dx;
-    if(this->position.y < -4)
+    if(this->position.y < -2.5)
     {
         this->dy = 0;
     }

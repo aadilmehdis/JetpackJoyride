@@ -187,9 +187,22 @@ CMakeFiles/graphics_asgn1.dir/src/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/player.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/player.cpp -o CMakeFiles/graphics_asgn1.dir/src/player.cpp.s
 
+CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o: ../src/tile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o -c /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/tile.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/tile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/tile.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/tile.cpp > CMakeFiles/graphics_asgn1.dir/src/tile.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/tile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/tile.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/tile.cpp -o CMakeFiles/graphics_asgn1.dir/src/tile.cpp.s
+
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o -c /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/timer.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.i: cmake_force
@@ -199,6 +212,19 @@ CMakeFiles/graphics_asgn1.dir/src/timer.cpp.i: cmake_force
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/timer.cpp -o CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/window.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/window.cpp.o: ../src/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/window.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/window.cpp.o -c /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/window.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/window.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/window.cpp > CMakeFiles/graphics_asgn1.dir/src/window.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/window.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/window.cpp -o CMakeFiles/graphics_asgn1.dir/src/window.cpp.s
 
 # Object files for target graphics_asgn1
 graphics_asgn1_OBJECTS = \
@@ -212,7 +238,9 @@ graphics_asgn1_OBJECTS = \
 "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/player.cpp.o" \
-"CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+"CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/window.cpp.o"
 
 # External object files for target graphics_asgn1
 graphics_asgn1_EXTERNAL_OBJECTS =
@@ -227,14 +255,16 @@ graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/player.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/window.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/build.make
 graphics_asgn1: external/glfw-3.1.2/src/libglfw3.a
 graphics_asgn1: external/libGLEW_1130.a
 graphics_asgn1: external/glfw-3.1.2/src/libglfw3.a
 graphics_asgn1: external/libGLEW_1130.a
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable graphics_asgn1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable graphics_asgn1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphics_asgn1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

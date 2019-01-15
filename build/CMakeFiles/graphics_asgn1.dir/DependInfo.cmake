@@ -14,7 +14,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/nonedit.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/other_handlers.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/player.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/player.cpp.o"
+  "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/tile.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/timer.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+  "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/window.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/window.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

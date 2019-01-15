@@ -1,13 +1,13 @@
 #include "main.h"
 
-#ifndef GROUND_H
-#define GROUND_H
+#ifndef WINDOW_H
+#define WINDOW_H
 
 
-class Ground {
+class Window {
 public:
-    Ground() {}
-    Ground(float x, float y, color_t color );
+    Window() {}
+    Window(float x, float y, color_t color );
     glm::vec3 position;
 
     void draw(glm::mat4 VP);

@@ -868,6 +868,33 @@ src/player.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
+src/tile.o: src/tile.cpp.o
+
+.PHONY : src/tile.o
+
+# target to build an object file
+src/tile.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o
+.PHONY : src/tile.cpp.o
+
+src/tile.i: src/tile.cpp.i
+
+.PHONY : src/tile.i
+
+# target to preprocess a source file
+src/tile.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/tile.cpp.i
+.PHONY : src/tile.cpp.i
+
+src/tile.s: src/tile.cpp.s
+
+.PHONY : src/tile.s
+
+# target to generate assembly for a file
+src/tile.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/tile.cpp.s
+.PHONY : src/tile.cpp.s
+
 src/timer.o: src/timer.cpp.o
 
 .PHONY : src/timer.o
@@ -894,6 +921,33 @@ src/timer.s: src/timer.cpp.s
 src/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
+
+src/window.o: src/window.cpp.o
+
+.PHONY : src/window.o
+
+# target to build an object file
+src/window.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/window.cpp.o
+.PHONY : src/window.cpp.o
+
+src/window.i: src/window.cpp.i
+
+.PHONY : src/window.i
+
+# target to preprocess a source file
+src/window.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/window.cpp.i
+.PHONY : src/window.cpp.i
+
+src/window.s: src/window.cpp.s
+
+.PHONY : src/window.s
+
+# target to generate assembly for a file
+src/window.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/window.cpp.s
+.PHONY : src/window.cpp.s
 
 # Help Target
 help:
@@ -971,9 +1025,15 @@ help:
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"
+	@echo "... src/tile.o"
+	@echo "... src/tile.i"
+	@echo "... src/tile.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"
+	@echo "... src/window.o"
+	@echo "... src/window.i"
+	@echo "... src/window.s"
 .PHONY : help
 
 
