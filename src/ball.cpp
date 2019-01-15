@@ -7,46 +7,56 @@ Ball::Ball(float x, float y, color_t color) {
     speed = 1;
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
-    static const GLfloat vertex_buffer_data[] = {
-        -1.0f,-1.0f,-1.0f, // triangle 1 : begin
-        -1.0f,-1.0f, 1.0f,
-        -1.0f, 1.0f, 1.0f, // triangle 1 : end
-        1.0f, 1.0f,-1.0f, // triangle 2 : begin
-        -1.0f,-1.0f,-1.0f,
-        -1.0f, 1.0f,-1.0f, // triangle 2 : end
-        1.0f,-1.0f, 1.0f,
-        -1.0f,-1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f, 1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        -1.0f,-1.0f,-1.0f,
-        -1.0f,-1.0f,-1.0f,
-        -1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f,-1.0f,
-        1.0f,-1.0f, 1.0f,
-        -1.0f,-1.0f, 1.0f,
-        -1.0f,-1.0f,-1.0f,
-        -1.0f, 1.0f, 1.0f,
-        -1.0f,-1.0f, 1.0f,
-        1.0f,-1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f, 1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f,-1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f,-1.0f,
-        -1.0f, 1.0f,-1.0f,
-        1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f,-1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f,-1.0f, 1.0f
+
+    float end_x = 10.0f;
+    float end_y = 0.0f;
+    GLfloat vertex_buffer_data[] = {
+
+        0.0f, 0.0f, 0.0f,  
+        2.0f, 0.0f, 0.0f,
+        0.0f, 2.0f, 0.0f,
+        0.0f, 2.0f, 0.0f,
+        2.0f, 0.0f, 0.0f,
+        2.0f, 2.0f, 0.0f,
+
+        1.0f, 1.0f, 0.0f,
+        1.5f, 0.5f, 0.0f,
+        end_x+1, end_y+1, 0.0f,
+
+        end_x+1.5, end_y+0.5, 0.0f,
+        1.5f, 0.5f, 0.0f,
+        end_x+1, end_y+1, 0.0f,
+
+        1.0f, 1.0f, 0.0f,
+        0.5f, 1.5f, 0.0f,
+        end_x+1, end_y+1, 0.0f,
+
+        end_x+0.5, end_y+1.5, 0.0f,
+        0.5f, 1.5f, 0.0f,
+        end_x+1, end_y+1, 0.0f,
+
+
+        end_x, end_y, 0.0f,
+        (end_x+2), end_y, 0.0f,
+        end_x, (end_y+2), 0.0f,
+        (end_x+2), (end_y+2), 0.0f,
+        (end_x+2), end_y, 0.0f,
+        end_x, (end_y+2), 0.0f,
+
+        0.0f, 0.0f, 0.0f,
+        2.0f, 0.0f, 0.0f,
+        2.0f, 5.0f, 0.0f,
+        0.0f, 0.0f, 0.0f,
+        0.0f, 5.0f, 0.0f,
+        2.0f, 5.0f, 0.0f,
+
     };
 
-    this->object = create3DObject(GL_TRIANGLES, 12*3, vertex_buffer_data, color, GL_FILL);
+    for(int i=0;i<24*3;++i)
+    {vertex_buffer_data[i]=vertex_buffer_data[i]/4;
+        printf("%ff, ",vertex_buffer_data[i]/4);
+    }
+    this->object = create3DObject(GL_TRIANGLES, 30, vertex_buffer_data, color, GL_FILL);
 }
 
 void Ball::draw(glm::mat4 VP) {
@@ -66,7 +76,7 @@ void Ball::set_position(float x, float y) {
 }
 
 void Ball::tick() {
-    this->rotation += speed;
+    // this->rotation += speed;
     // this->position.x -= speed;
     // this->position.y -= speed;
 }

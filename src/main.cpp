@@ -1,6 +1,12 @@
 #include "main.h"
 #include "timer.h"
 #include "ball.h"
+#include "fireline.h"
+#include "player.h"
+#include "boomerang.h"
+#include "ground.h"
+
+#include <vector>
 
 using namespace std;
 
@@ -12,7 +18,15 @@ GLFWwindow *window;
 * Customizable functions *
 **************************/
 
-Ball ball1;
+FireLine ball1;
+FireLine ball2;
+Player player;
+Ground ground;
+
+long long int Frame=0;
+
+vector<FireLine> fire_lines;
+vector<Boomerang> boomerangs;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -30,7 +44,7 @@ void draw() {
     glUseProgram (programID);
 
     // Eye - Location of camera. Don't change unless you are sure!!
-    glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
+    glm::vec3 eye (0,0,1);
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
     glm::vec3 target (0, 0, 0);
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
@@ -51,19 +65,96 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    ball1.draw(VP);
+    // ball1.draw(VP);
+    // ball2.draw(VP);
+    player.draw(VP);
+    ground.draw(VP);
+    for(int i=0;i<fire_lines.size();++i)
+    {
+        fire_lines[i].draw(VP);
+    }
+    for(int i=0;i<boomerangs.size();++i)
+    {
+        boomerangs[i].draw(VP);
+    }
 }
 
 void tick_input(GLFWwindow *window) {
-    int left  = glfwGetKey(window, GLFW_KEY_LEFT);
-    int right = glfwGetKey(window, GLFW_KEY_RIGHT);
-    if (left) {
-        // Do something
+    int left    = glfwGetKey(window, GLFW_KEY_LEFT);
+    int right   = glfwGetKey(window, GLFW_KEY_RIGHT);
+    int up      = glfwGetKey(window, GLFW_KEY_UP);
+    if (up) {
+        player.dy -= 0.002;
+    }
+    cout<<player.dx;
+    if(left) {
+        if(player.dx == -0.01)
+        {
+            player.dx = 0;
+        }
+        else
+        {
+            player.dx = 0.01;
+        }  
+    }
+    if(right) {
+        if(player.dx == 0.01)
+        {
+            player.dx = 0;
+        }
+        else
+        {
+            player.dx = -0.01;
+        }  
+    }
+}
+
+void update_object_vectors() {
+    for(int i=0;i<fire_lines.size();++i)
+    {
+        if(fire_lines[i].position.x < -5)
+        {
+            fire_lines.erase(fire_lines.begin() + i);
+        }
+    } 
+    for(int i=0;i<boomerangs.size();++i)
+    {
+        if(boomerangs[i].position.x < -5)
+        {
+            boomerangs.erase(boomerangs.begin() + i );
+        }
+    }  
+}
+
+void spawn_fire_lines() {
+    if(Frame%200 == 0)
+    {
+        int y_pos = rand()%10 + (-2);
+        fire_lines.push_back(FireLine(5, y_pos, COLOR_RED));
+    }
+}
+
+void spawn_boomerangs() {
+    if(Frame%500 == 0)
+    {
+        int y_pos = rand()%10 + (-2);
+        boomerangs.push_back(Boomerang(5, y_pos, COLOR_GREEN));
     }
 }
 
 void tick_elements() {
-    ball1.tick();
+    // ball1.tick();
+    // ball2.tick();
+    ground.tick();
+    player.tick();
+    for(int i=0;i<fire_lines.size();++i)
+    {
+        fire_lines[i].tick();
+    }
+    for(int i=0;i<boomerangs.size();++i)
+    {
+        boomerangs[i].tick();
+    }
     camera_rotation_angle += 1;
 }
 
@@ -73,7 +164,13 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
 
-    ball1       = Ball(0, 0, COLOR_RED);
+    player = Player(0, 0, COLOR_BLACK);
+    ground = Ground(-4, -4, COLOR_BLACK);
+    // ball1       = FireLine(0, 0, COLOR_RED);
+    // ball2       = FireLine(0.5, 0.5, COLOR_GREEN);
+    // fire_lines.push_back(FireLine(0, 0, COLOR_RED));
+    // fire_lines.push_back(FireLine(0.5, 0.5, COLOR_GREEN));
+    // fire_lines.push_back(FireLine(1, 1, COLOR_BLACK));
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -99,7 +196,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 600;
+    int width  = 1000;
     int height = 600;
 
     window = initGLFW(width, height);
@@ -118,7 +215,16 @@ int main(int argc, char **argv) {
             glfwSwapBuffers(window);
 
             tick_elements();
+
+
+            update_object_vectors();
+            spawn_fire_lines();
+            spawn_boomerangs();
+            ++Frame;
+
+
             tick_input(window);
+
         }
 
         // Poll for Keyboard and mouse events
