@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/dragon.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/fireline.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/fuelbullet.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"

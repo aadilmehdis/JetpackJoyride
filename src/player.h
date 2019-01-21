@@ -18,9 +18,16 @@ public:
     double dx;
     double dy;
     double gravity;
+    bounding_box_t bbox;
 
 private:
-    VAO *object;
+    // VAO *object;
+
+    VAO *head;
+    VAO *torso;
+    VAO *leg;
+    VAO *jetpack;
+    // VAO *box;
 };
 
 #endif // BALL_H

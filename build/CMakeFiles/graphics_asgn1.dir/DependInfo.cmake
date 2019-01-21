@@ -6,8 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/ball.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/boomerang.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o"
+  "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/coin.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/color.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
+  "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/dragon.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/dragon.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/fireline.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/fireline.cpp.o"
+  "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/fuelbullet.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/fuelbullet.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/ground.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/input.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
   "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/main.cpp" "/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"

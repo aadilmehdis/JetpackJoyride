@@ -6,20 +6,23 @@ Boomerang::Boomerang(float x, float y, color_t color )
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->dx = 0;
-    this->dy = 0;
-    this->gravity = 0.001;
+    this->dx = -0.055;
+    this->dy = 0.006;
+    this->gravity = 0.0001;
 
-    GLfloat vertex_buffer_data[] = {
+    GLfloat vertex_buffer_data1[] = {
         0.0f, 0.0f, 0.0f,
         0.5f, 0.0f, 0.0f,
-        0.25f, 0.5f, 0.0f,
-        0.0f, 0.0f, 0.0f,
-        0.5f, 0.0f, 0.0f,
-        0.25f, -0.5f, 0.0f,
-
+        0.25f, 0.2f, 0.0f,
     };
-    this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, color, GL_FILL);
+    GLfloat vertex_buffer_data2[] = {
+        0.0f, 0.0f, 0.0f,
+        0.5f, 0.0f, 0.0f,
+        0.25f, -0.2f, 0.0f,
+    };
+    this->upperhead = create3DObject(GL_TRIANGLES, 3, vertex_buffer_data1, COLOR_PASTEL_BLUE, GL_FILL);
+    this->lowerhead = create3DObject(GL_TRIANGLES, 3, vertex_buffer_data2, COLOR_BROWN, GL_FILL);
+    
 }
 
 void Boomerang::draw(glm::mat4 VP) {
@@ -31,7 +34,8 @@ void Boomerang::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->object);
+    draw3DObject(this->upperhead);
+    draw3DObject(this->lowerhead);
 }
 
 void Boomerang::set_position(float x, float y) {
@@ -39,10 +43,9 @@ void Boomerang::set_position(float x, float y) {
 }
 
 void Boomerang::tick() {
-    this->position.x -= 0.01;
-    if(this->position.x < 0)
-    {
-        this->position.y -= 0.01;
-    }
+
+    this->position.x += this->dx;
+    this->position.y -= this->dy;
+    this->dx += this->gravity;
 }
 

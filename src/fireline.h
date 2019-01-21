@@ -12,15 +12,23 @@ public:
 
     void draw(glm::mat4 VP);
     void set_position(float x, float y);
+    line_t get_position();
     void tick();
+
+    float t_x;
+    float t_y;
 
     float rotation;
     double dx;
     double dy;
     double gravity;
+    line_t line_coords;
 
 private:
-    VAO *object;
+    VAO *circle1;
+    VAO *circle2;
+    VAO *line1;
+    VAO *line2;
 };
 
 #endif // BALL_H

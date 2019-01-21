@@ -652,6 +652,33 @@ src/boomerang.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.s
 .PHONY : src/boomerang.cpp.s
 
+src/coin.o: src/coin.cpp.o
+
+.PHONY : src/coin.o
+
+# target to build an object file
+src/coin.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o
+.PHONY : src/coin.cpp.o
+
+src/coin.i: src/coin.cpp.i
+
+.PHONY : src/coin.i
+
+# target to preprocess a source file
+src/coin.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.i
+.PHONY : src/coin.cpp.i
+
+src/coin.s: src/coin.cpp.s
+
+.PHONY : src/coin.s
+
+# target to generate assembly for a file
+src/coin.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.s
+.PHONY : src/coin.cpp.s
+
 src/color.o: src/color.cpp.o
 
 .PHONY : src/color.o
@@ -679,6 +706,33 @@ src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
 
+src/dragon.o: src/dragon.cpp.o
+
+.PHONY : src/dragon.o
+
+# target to build an object file
+src/dragon.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dragon.cpp.o
+.PHONY : src/dragon.cpp.o
+
+src/dragon.i: src/dragon.cpp.i
+
+.PHONY : src/dragon.i
+
+# target to preprocess a source file
+src/dragon.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dragon.cpp.i
+.PHONY : src/dragon.cpp.i
+
+src/dragon.s: src/dragon.cpp.s
+
+.PHONY : src/dragon.s
+
+# target to generate assembly for a file
+src/dragon.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dragon.cpp.s
+.PHONY : src/dragon.cpp.s
+
 src/fireline.o: src/fireline.cpp.o
 
 .PHONY : src/fireline.o
@@ -705,6 +759,33 @@ src/fireline.s: src/fireline.cpp.s
 src/fireline.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fireline.cpp.s
 .PHONY : src/fireline.cpp.s
+
+src/fuelbullet.o: src/fuelbullet.cpp.o
+
+.PHONY : src/fuelbullet.o
+
+# target to build an object file
+src/fuelbullet.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelbullet.cpp.o
+.PHONY : src/fuelbullet.cpp.o
+
+src/fuelbullet.i: src/fuelbullet.cpp.i
+
+.PHONY : src/fuelbullet.i
+
+# target to preprocess a source file
+src/fuelbullet.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelbullet.cpp.i
+.PHONY : src/fuelbullet.cpp.i
+
+src/fuelbullet.s: src/fuelbullet.cpp.s
+
+.PHONY : src/fuelbullet.s
+
+# target to generate assembly for a file
+src/fuelbullet.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuelbullet.cpp.s
+.PHONY : src/fuelbullet.cpp.s
 
 src/ground.o: src/ground.cpp.o
 
@@ -1001,12 +1082,21 @@ help:
 	@echo "... src/boomerang.o"
 	@echo "... src/boomerang.i"
 	@echo "... src/boomerang.s"
+	@echo "... src/coin.o"
+	@echo "... src/coin.i"
+	@echo "... src/coin.s"
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/dragon.o"
+	@echo "... src/dragon.i"
+	@echo "... src/dragon.s"
 	@echo "... src/fireline.o"
 	@echo "... src/fireline.i"
 	@echo "... src/fireline.s"
+	@echo "... src/fuelbullet.o"
+	@echo "... src/fuelbullet.i"
+	@echo "... src/fuelbullet.s"
 	@echo "... src/ground.o"
 	@echo "... src/ground.i"
 	@echo "... src/ground.s"

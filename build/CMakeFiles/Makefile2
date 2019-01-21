@@ -72,7 +72,7 @@ CMakeFiles/graphics_asgn1.dir/all: external/CMakeFiles/GLEW_1130.dir/all
 CMakeFiles/graphics_asgn1.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/depend
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=84,85,86,87 "Built target graphics_asgn1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=83,84,85,86,87 "Built target graphics_asgn1"
 .PHONY : CMakeFiles/graphics_asgn1.dir/all
 
 # Include target in all.
@@ -82,7 +82,7 @@ all: CMakeFiles/graphics_asgn1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/graphics_asgn1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/graphics_asgn1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : CMakeFiles/graphics_asgn1.dir/rule
@@ -186,7 +186,7 @@ clean: external/CMakeFiles/ANTTWEAKBAR_116_OGLCORE_GLFW.dir/clean
 external/CMakeFiles/GLEW_1130.dir/all:
 	$(MAKE) -f external/CMakeFiles/GLEW_1130.dir/build.make external/CMakeFiles/GLEW_1130.dir/depend
 	$(MAKE) -f external/CMakeFiles/GLEW_1130.dir/build.make external/CMakeFiles/GLEW_1130.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target GLEW_1130"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=36 "Built target GLEW_1130"
 .PHONY : external/CMakeFiles/GLEW_1130.dir/all
 
 # Include target in all.
@@ -196,7 +196,7 @@ all: external/CMakeFiles/GLEW_1130.dir/all
 
 # Build rule for subdir invocation for target.
 external/CMakeFiles/GLEW_1130.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 external/CMakeFiles/GLEW_1130.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/CMakeFiles/GLEW_1130.dir/rule
@@ -298,7 +298,7 @@ external/glfw-3.1.2/src/preinstall:
 external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f external/glfw-3.1.2/src/CMakeFiles/glfw.dir/build.make external/glfw-3.1.2/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/src/CMakeFiles/glfw.dir/build.make external/glfw-3.1.2/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=79,80,81,82 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=79,80,81 "Built target glfw"
 .PHONY : external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 
 # Include target in all.
@@ -308,7 +308,7 @@ all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/src/CMakeFiles/glfw.dir/rule
@@ -375,7 +375,7 @@ all: external/glfw-3.1.2/examples/CMakeFiles/heightmap.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/examples/CMakeFiles/heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/examples/CMakeFiles/heightmap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/heightmap.dir/rule
@@ -412,7 +412,7 @@ all: external/glfw-3.1.2/examples/CMakeFiles/wave.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/examples/CMakeFiles/wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/examples/CMakeFiles/wave.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/wave.dir/rule
@@ -449,7 +449,7 @@ all: external/glfw-3.1.2/examples/CMakeFiles/splitview.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/examples/CMakeFiles/splitview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/examples/CMakeFiles/splitview.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/splitview.dir/rule
@@ -476,7 +476,7 @@ clean: external/glfw-3.1.2/examples/CMakeFiles/splitview.dir/clean
 external/glfw-3.1.2/examples/CMakeFiles/simple.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/examples/CMakeFiles/simple.dir/build.make external/glfw-3.1.2/examples/CMakeFiles/simple.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/examples/CMakeFiles/simple.dir/build.make external/glfw-3.1.2/examples/CMakeFiles/simple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=93 "Built target simple"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target simple"
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/simple.dir/all
 
 # Include target in all.
@@ -486,7 +486,7 @@ all: external/glfw-3.1.2/examples/CMakeFiles/simple.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/examples/CMakeFiles/simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/examples/CMakeFiles/simple.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/simple.dir/rule
@@ -523,7 +523,7 @@ all: external/glfw-3.1.2/examples/CMakeFiles/particles.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/examples/CMakeFiles/particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/examples/CMakeFiles/particles.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/particles.dir/rule
@@ -550,7 +550,7 @@ clean: external/glfw-3.1.2/examples/CMakeFiles/particles.dir/clean
 external/glfw-3.1.2/examples/CMakeFiles/gears.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/examples/CMakeFiles/gears.dir/build.make external/glfw-3.1.2/examples/CMakeFiles/gears.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/examples/CMakeFiles/gears.dir/build.make external/glfw-3.1.2/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target gears"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=78 "Built target gears"
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/gears.dir/all
 
 # Include target in all.
@@ -587,7 +587,7 @@ clean: external/glfw-3.1.2/examples/CMakeFiles/gears.dir/clean
 external/glfw-3.1.2/examples/CMakeFiles/boing.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/examples/CMakeFiles/boing.dir/build.make external/glfw-3.1.2/examples/CMakeFiles/boing.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/examples/CMakeFiles/boing.dir/build.make external/glfw-3.1.2/examples/CMakeFiles/boing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target boing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=74 "Built target boing"
 .PHONY : external/glfw-3.1.2/examples/CMakeFiles/boing.dir/all
 
 # Include target in all.
@@ -682,7 +682,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/windows.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/windows.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/windows.dir/rule
@@ -719,7 +719,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/title.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/title.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/title.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/title.dir/rule
@@ -756,7 +756,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/threads.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/threads.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/threads.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/threads.dir/rule
@@ -793,7 +793,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/tearing.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/tearing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/tearing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/tearing.dir/rule
@@ -820,7 +820,7 @@ clean: external/glfw-3.1.2/tests/CMakeFiles/tearing.dir/clean
 external/glfw-3.1.2/tests/CMakeFiles/empty.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/empty.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/empty.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/empty.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/empty.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target empty"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=76 "Built target empty"
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/empty.dir/all
 
 # Include target in all.
@@ -857,7 +857,7 @@ clean: external/glfw-3.1.2/tests/CMakeFiles/empty.dir/clean
 external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=83 "Built target glfwinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=82 "Built target glfwinfo"
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/all
 
 # Include target in all.
@@ -867,7 +867,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/rule
@@ -894,7 +894,7 @@ clean: external/glfw-3.1.2/tests/CMakeFiles/glfwinfo.dir/clean
 external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=76 "Built target cursor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=75 "Built target cursor"
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/all
 
 # Include target in all.
@@ -904,7 +904,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/cursor.dir/rule
@@ -941,7 +941,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/monitors.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/monitors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/monitors.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/monitors.dir/rule
@@ -978,7 +978,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/reopen.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/reopen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/reopen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/reopen.dir/rule
@@ -1015,7 +1015,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/joysticks.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/joysticks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/joysticks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/joysticks.dir/rule
@@ -1052,7 +1052,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/events.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/events.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/events.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/events.dir/rule
@@ -1089,7 +1089,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/iconify.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/iconify.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/iconify.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/iconify.dir/rule
@@ -1116,7 +1116,7 @@ clean: external/glfw-3.1.2/tests/CMakeFiles/iconify.dir/clean
 external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=78 "Built target gamma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target gamma"
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/all
 
 # Include target in all.
@@ -1126,7 +1126,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/rule
@@ -1153,7 +1153,7 @@ clean: external/glfw-3.1.2/tests/CMakeFiles/gamma.dir/clean
 external/glfw-3.1.2/tests/CMakeFiles/sharing.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/sharing.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/sharing.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/sharing.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/sharing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target sharing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=93 "Built target sharing"
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/sharing.dir/all
 
 # Include target in all.
@@ -1200,7 +1200,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/msaa.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/msaa.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/msaa.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/msaa.dir/rule
@@ -1227,7 +1227,7 @@ clean: external/glfw-3.1.2/tests/CMakeFiles/msaa.dir/clean
 external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/all: external/glfw-3.1.2/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/depend
 	$(MAKE) -f external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/build.make external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=75 "Built target clipboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num= "Built target clipboard"
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/all
 
 # Include target in all.
@@ -1237,7 +1237,7 @@ all: external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/all
 
 # Build rule for subdir invocation for target.
 external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/glfw-3.1.2/tests/CMakeFiles/clipboard.dir/rule
@@ -1337,7 +1337,7 @@ external/assimp-3.0.1270/code/preinstall:
 external/assimp-3.0.1270/code/CMakeFiles/assimp.dir/all: external/assimp-3.0.1270/contrib/zlib/CMakeFiles/zlib.dir/all
 	$(MAKE) -f external/assimp-3.0.1270/code/CMakeFiles/assimp.dir/build.make external/assimp-3.0.1270/code/CMakeFiles/assimp.dir/depend
 	$(MAKE) -f external/assimp-3.0.1270/code/CMakeFiles/assimp.dir/build.make external/assimp-3.0.1270/code/CMakeFiles/assimp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74 "Built target assimp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73 "Built target assimp"
 .PHONY : external/assimp-3.0.1270/code/CMakeFiles/assimp.dir/all
 
 # Include target in all.
@@ -1392,7 +1392,7 @@ external/bullet-2.81-rev2613/src/BulletSoftBody/preinstall:
 external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all:
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/build.make external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/depend
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/build.make external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=34,35,36 "Built target BulletSoftBody"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=34,35 "Built target BulletSoftBody"
 .PHONY : external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
 
 # Include target in all.
@@ -1402,7 +1402,7 @@ all: external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.d
 
 # Build rule for subdir invocation for target.
 external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/rule
@@ -1447,7 +1447,7 @@ external/bullet-2.81-rev2613/src/BulletCollision/preinstall:
 external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/all:
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/build.make external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/depend
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/build.make external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28 "Built target BulletCollision"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target BulletCollision"
 .PHONY : external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 
 # Include target in all.
@@ -1457,7 +1457,7 @@ all: external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision
 
 # Build rule for subdir invocation for target.
 external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 25
 	$(MAKE) -f CMakeFiles/Makefile2 external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/rule
@@ -1502,7 +1502,7 @@ external/bullet-2.81-rev2613/src/BulletDynamics/preinstall:
 external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all:
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build.make external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/depend
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build.make external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=29,30,31,32,33 "Built target BulletDynamics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=28,29,30,31,32,33 "Built target BulletDynamics"
 .PHONY : external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 
 # Include target in all.
@@ -1512,7 +1512,7 @@ all: external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.d
 
 # Build rule for subdir invocation for target.
 external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/rule
@@ -1557,7 +1557,7 @@ external/bullet-2.81-rev2613/src/LinearMath/preinstall:
 external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all:
 	$(MAKE) -f external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/build.make external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/depend
 	$(MAKE) -f external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/build.make external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=37,38,39 "Built target LinearMath"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=37,38 "Built target LinearMath"
 .PHONY : external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all
 
 # Include target in all.
@@ -1567,7 +1567,7 @@ all: external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all
 
 # Build rule for subdir invocation for target.
 external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles 0
 .PHONY : external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/rule

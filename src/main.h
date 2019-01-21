@@ -71,7 +71,16 @@ struct bounding_box_t {
     float height;
 };
 
+struct line_t {
+    float x1;
+    float y1;
+    float x2;
+    float y2;
+};
+
 bool detect_collision(bounding_box_t a, bounding_box_t b);
+bool detect_line_line_collision(float p0_x, float p0_y, float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y);
+bool detect_line_rectangle_collision(bounding_box_t a, line_t b);
 
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
@@ -85,7 +94,18 @@ extern const color_t COLOR_IVORY4;
 extern const color_t COLOR_GROUND;
 extern const color_t COLOR_STEELE;
 extern const color_t COLOR_YELLOW;
-
+extern const color_t COLOR_PURPLE;
+extern const color_t COLOR_CYAN;
+extern const color_t COLOR_GOLD;
+extern const color_t COLOR_WINDOW;
+extern const color_t COLOR_PASTEL_BLUE;
+extern const color_t COLOR_BROWN;
+extern const color_t COLOR_CRIMSON;
+extern const color_t COLOR_FLAME;
+extern const color_t COLOR_SILVER;
+extern const color_t COLOR_TILE;
+extern const color_t COLOR_ROYAL_BLUE;
+extern const color_t COLOR_NAVY_BLUE;
 
 
 #endif

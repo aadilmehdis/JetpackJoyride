@@ -6,20 +6,177 @@ Player::Player(float x, float y, color_t color )
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->dx = 0;
+    this->dx = 0.02;
     this->dy = 0;
     this->gravity = 0.001;
 
-    GLfloat vertex_buffer_data[] = {
-        0.0f, 0.0f, 0.0f,
-        0.0f, 1.0f, 0.0f,
-        1.0f, 0.0f, 0.0f,
-        1.0f, 1.0f, 0.0f,
-        0.0f, 1.0f, 0.0f,
-        1.0f, 0.0f, 0.0f,
+
+    this->bbox.x = x;
+    this->bbox.y = y;
+    this->bbox.height = 1.15;
+    this->bbox.width = 0.60;
+    // this->bbox.x = x;
+    // this->bbox.y = y;
+    // this->bbox.height = 1;
+    // this->bbox.width = 1;
+
+
+    int N=100;
+	double pi = 3.1415926535897932384626433;
+	GLfloat g_vertex_buffer_head[9*N];
+	double theta = 2 * pi / N;
+	double SinTheta, CosTheta;
+	SinTheta = sin(theta);
+	CosTheta = cos(theta);
+
+	float xx, yy;
+	xx = 0.0f;
+	yy = 0.15f;
+
+	for(int i=0;i<9*N;i+=9)
+	{
+		g_vertex_buffer_head[i+0] = 0.0f;
+		g_vertex_buffer_head[i+1] = 0.0f;
+		g_vertex_buffer_head[i+2] = 0.0f;
+
+		g_vertex_buffer_head[i+3] = xx;
+		g_vertex_buffer_head[i+4] = yy;
+		g_vertex_buffer_head[i+5] = 0.0f;
+
+		g_vertex_buffer_head[i+6] = xx * CosTheta + yy * SinTheta;
+		g_vertex_buffer_head[i+7] = yy * CosTheta - xx * SinTheta;
+		g_vertex_buffer_head[i+8] = 0.0f;
+
+		xx = g_vertex_buffer_head[i+6];
+		yy = g_vertex_buffer_head[i+7];
+	}
+    
+    GLfloat g_vertex_buffer_torso[] = {
+        -0.18f, -0.15f, 0.0f,
+        0.18f, -.15f, 0.0f,
+        -0.18f, -.7f, 0.0f,
+
+        0.18f, -.15f, 0.0f,
+        -0.18f, -.7f, 0.0f,
+        0.18f, -.7f, 0.0f,
 
     };
-    this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, color, GL_FILL);
+
+    GLfloat g_vertex_buffer_jetpack[] = {
+
+        -0.18f, -0.2f, 0.0f,
+        -0.18f, -0.5f, 0.0f,
+        -0.3f, -0.5f, 0.0f,
+
+        -0.18f, -0.2f, 0.0f,
+        -0.25f, -0.2f, 0.0f,
+        -0.3f, -0.5f, 0.0f,
+
+    };
+
+    GLfloat g_vertex_buffer_leg[] = {
+
+        -0.05f,-0.7f,0.0f,
+        0.05f,-0.7f,0.0f,
+        -0.05f,-1.0f, 0.0f,
+
+        0.05f,-0.7f,0.0f,
+        -0.05f,-1.0f, 0.0f,
+        0.05f,-1.0f,0.0f,
+
+        0.18f, -0.2f, 0.0f,
+        0.18f, -0.3f, 0.0f,
+        0.3f, -0.3f, 0.0f,
+
+        0.18f, -0.2f, 0.0f,
+        0.25f, -0.2f, 0.0f,
+        0.3f, -0.3f, 0.0f,
+
+        0.05f, -0.9f, 0.0f,
+        0.05f, -1.0f, 0.0f,
+        0.18f, -1.0f, 0.0f,
+    };
+
+    GLfloat g_vertex_bbox[] = {
+        // this->bbox.x, this->bbox.y, 0.0f,
+        // this->bbox.x, this->bbox.y + this->bbox.height, 0.0f,
+        // this->bbox.x + this->bbox.width, this->bbox.y + this->bbox.height, 0.0f,
+        // this->bbox.x + this->bbox.width, this->bbox.y, 0.0f,
+
+        0.0f,0.0f,0.0f,
+        0.0f,-1.15f,0.0f,
+        0.6f,-1.15f,0.0f,
+        0.6f,0.0f,0.0f,
+
+    };
+    
+    for(int i=0;i<9*N;++i)
+    {
+        if(i%3 == 0)
+        {
+            g_vertex_buffer_head[i] += 0.3;
+        }
+        else if(i%3 == 1)
+        {
+            g_vertex_buffer_head[i] -= 0.15;
+        }
+        else
+        {
+            ;
+        }
+    }
+    for(int i=0;i<3*6;++i)
+    {
+        if(i%3 == 0)
+        {
+            g_vertex_buffer_jetpack[i] += 0.3;
+            g_vertex_buffer_torso[i] +=0.3;
+        }
+        else if(i%3 == 1)
+        {
+            g_vertex_buffer_jetpack[i] -= 0.3;
+            g_vertex_buffer_torso[i] -= 0.15;
+        }
+        else
+        {
+            ;
+        }
+    }
+    for(int i=0;i<15*3;++i)
+    {
+        if(i%3 == 0)
+        {
+            g_vertex_buffer_leg[i] += 0.3;
+        }
+        else if(i%3 == 1)
+        {
+            g_vertex_buffer_leg[i] -= 0.15;
+        }
+        else
+        {
+            ;
+        }
+    }
+
+
+    // GLfloat g_vertex_buffer_jetpack[] = {
+
+    //     0.0f, 0.0f, 0.0f,
+    //     1.0f, 0.0f, 0.0f,
+    //     0.0f, -1.0f, 0.0f,
+
+    //     1.0f, 0.0f, 0.0f,
+    //     0.0f, -1.0f, 0.0f,
+    //     1.0f, -1.0f, 0.0f,
+    
+    // };
+    
+    this->head = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_head, COLOR_GREEN, GL_FILL);
+    this->torso = create3DObject(GL_TRIANGLES, 6, g_vertex_buffer_torso, COLOR_PURPLE, GL_FILL);
+    this->leg = create3DObject(GL_TRIANGLES, 15, g_vertex_buffer_leg, COLOR_NAVY_BLUE, GL_FILL);
+    this->jetpack = create3DObject(GL_TRIANGLES, 6, g_vertex_buffer_jetpack, COLOR_RED, GL_FILL);
+    // this->object = create3DObject(GL_LINE_LOOP, 4, g_vertex_bbox, COLOR_BLACK, GL_FILL);
+
 }
 
 void Player::draw(glm::mat4 VP) {
@@ -31,7 +188,12 @@ void Player::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->object);
+
+    draw3DObject(this->head);
+    draw3DObject(this->torso);
+    draw3DObject(this->leg);
+    draw3DObject(this->jetpack);
+    // draw3DObject(this->object);
 }
 
 void Player::set_position(float x, float y) {
@@ -40,14 +202,26 @@ void Player::set_position(float x, float y) {
 
 void Player::tick() {
     this->position.y -= dy;
-    this->position.x -= dx;
-    if(this->position.y < -2.5)
+    if(this->position.y < -1.35)
     {
         this->dy = 0;
+        this->position.y = -1.35;
     }
     else
     {
         this->dy += this->gravity;
     }
+
+    if(this->position.y > 4)
+    {
+        this->position.y = 4;
+        this->dy = 0;
+    }
+    if(this->position.x < -4.0)
+    {
+       this->position.x = -4.0;
+    }
+    this->bbox.x = this->position.x;
+    this->bbox.y = this->position.y;
 }
 

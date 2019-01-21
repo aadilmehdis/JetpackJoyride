@@ -20,7 +20,8 @@ public:
     double gravity;
 
 private:
-    VAO *object;
+    VAO *upperhead;
+    VAO *lowerhead;
 };
 
 #endif // BALL_H

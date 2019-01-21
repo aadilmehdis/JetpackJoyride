@@ -11,47 +11,128 @@ FireLine::FireLine(float x, float y, color_t color )
     this->gravity = 0;
 
     
-    float end_x = rand()%(20) + (-10);
+    float end_x = rand()%(10) + (-5);
     float end_y = rand()%(10) + (0);
+
+    this->t_x = end_x/4;
+    this->t_y = end_y/4;
+
+    this->line_coords.x1 = 0;
+    this->line_coords.y1 = 0;
+    this->line_coords.x2 = end_x/4;
+    this->line_coords.y2 = end_y/4;
+
     while(abs(end_x) == abs(end_y) && abs(end_x) > 5) {
         end_x = rand()%(20) + (-10);
     }
 
-    GLfloat vertex_buffer_data[] = {
-        0.0f, 0.0f, 0.0f,  
-        2.0f, 0.0f, 0.0f,
-        0.0f, 2.0f, 0.0f,
-        0.0f, 2.0f, 0.0f,
-        2.0f, 0.0f, 0.0f,
-        2.0f, 2.0f, 0.0f,
 
-        1.0f, 1.0f, 0.0f,
-        1.5f, 0.5f, 0.0f,
-        end_x+1, end_y+1, 0.0f,
 
-        end_x+1.5, end_y+0.5, 0.0f,
-        1.5f, 0.5f, 0.0f,
-        end_x+1, end_y+1, 0.0f,
+    int N=6;
+	double pi = 3.1415926535897932384626433;
+	GLfloat g_vertex_buffer_data1[9*N];
+	GLfloat g_vertex_buffer_data2[9*N];
+	double theta = 2 * pi / N;
+	double SinTheta, CosTheta;
+	SinTheta = sin(theta);
+	CosTheta = cos(theta);
 
-        1.0f, 1.0f, 0.0f,
-        0.5f, 1.5f, 0.0f,
-        end_x+1, end_y+1, 0.0f,
+	float xx, yy, xx2, yy2;
+	xx = 0.0f;
+	yy = 0.5f;
+    xx2 = 0.0f;
+	yy2 = 0.5f;
 
-        end_x+0.5, end_y+1.5, 0.0f,
-        0.5f, 1.5f, 0.0f,
-        end_x+1, end_y+1, 0.0f,
+    GLfloat g_vertex_buffer_data3[] = {
+        0.0f, 0.0f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        0.03f, 0.03f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        0.03f, 0.03f, 0.0f,
+        end_x/4+0.03, end_y/4+0.03, 0.0f,
 
-        end_x, end_y, 0.0f,
-        (end_x+2), end_y, 0.0f,
-        end_x, (end_y+2), 0.0f,
-        (end_x+2), (end_y+2), 0.0f,
-        (end_x+2), end_y, 0.0f,
-        end_x, (end_y+2), 0.0f,
+        0.0f, 0.0f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        -0.03f, -0.03f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        -0.03f, -0.03f, 0.0f,
+        end_x/4-0.03, end_y/4-0.03, 0.0f,
     };
-    for(int i=0;i<24*3;++i)
-    {vertex_buffer_data[i]=vertex_buffer_data[i]/8;
+
+    GLfloat g_vertex_buffer_data4[] = {
+        0.0f, 0.0f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        0.05f, 0.05f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        0.05f, 0.05f, 0.0f,
+        end_x/4+0.05, end_y/4+0.05, 0.0f,
+
+        0.0f, 0.0f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        -0.05f, -0.05f, 0.0f,
+        end_x/4, end_y/4, 0.0f,
+        -0.05f, -0.05f, 0.0f,
+        end_x/4-0.05, end_y/4-0.05, 0.0f,
+    };
+
+	for(int i=0;i<9*N;i+=9)
+	{
+		g_vertex_buffer_data1[i+0] = 0.0f;
+		g_vertex_buffer_data1[i+1] = 0.0f;
+		g_vertex_buffer_data1[i+2] = 0.0f;
+
+		g_vertex_buffer_data1[i+3] = xx;
+		g_vertex_buffer_data1[i+4] = yy;
+		g_vertex_buffer_data1[i+5] = 0.0f;
+
+		g_vertex_buffer_data1[i+6] = xx * CosTheta + yy * SinTheta;
+		g_vertex_buffer_data1[i+7] = yy * CosTheta - xx * SinTheta;
+		g_vertex_buffer_data1[i+8] = 0.0f;
+
+		xx = g_vertex_buffer_data1[i+6];
+		yy = g_vertex_buffer_data1[i+7];
+
+        g_vertex_buffer_data2[i+0] = 0.0f;
+		g_vertex_buffer_data2[i+1] = 0.0f;
+		g_vertex_buffer_data2[i+2] = 0.0f;
+
+		g_vertex_buffer_data2[i+3] = xx2;
+		g_vertex_buffer_data2[i+4] = yy2;
+		g_vertex_buffer_data2[i+5] = 0.0f;
+
+		g_vertex_buffer_data2[i+6] = (xx2 * CosTheta + yy2 * SinTheta);
+		g_vertex_buffer_data2[i+7] = (yy2 * CosTheta - xx2 * SinTheta);
+		g_vertex_buffer_data2[i+8] = 0.0f;
+
+		xx2 = g_vertex_buffer_data2[i+6];
+		yy2 = g_vertex_buffer_data2[i+7];
+	}
+    
+    for(int i=0;i<9*N;++i)
+    {g_vertex_buffer_data1[i]=g_vertex_buffer_data1[i]/4;
     }
-    this->object = create3DObject(GL_TRIANGLES, 24, vertex_buffer_data, color, GL_FILL);
+    for(int i=0;i<9*N;++i)
+    {
+        if((i+1)%3 != 0)
+        {
+            if((i+1)%3 == 1)
+            {
+                g_vertex_buffer_data2[i] += end_x;  
+            }
+            else 
+            {
+                g_vertex_buffer_data2[i] += end_y; 
+            }
+        }
+        g_vertex_buffer_data2[i]=g_vertex_buffer_data2[i]/4;
+    }
+    this->circle1 = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_data1, COLOR_SILVER, GL_FILL);
+    this->circle2 = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_data2, COLOR_SILVER, GL_FILL);
+    glLineWidth(2.0);
+    this->line1 = create3DObject(GL_TRIANGLES, 12, g_vertex_buffer_data3, COLOR_FLAME, GL_FILL);
+    this->line2 = create3DObject(GL_TRIANGLES, 12, g_vertex_buffer_data4, COLOR_GOLD, GL_FILL);
+    // this->line1 = create3DObject(GL_LINES, 2, g_vertex_buffer_data3, COLOR_FLAME, GL_FILL);
+
 }
 
 void FireLine::draw(glm::mat4 VP) {
@@ -63,7 +144,11 @@ void FireLine::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->object);
+    draw3DObject(this->line2);
+    draw3DObject(this->line1);
+    draw3DObject(this->circle1);
+    draw3DObject(this->circle2);
+
 }
 
 void FireLine::set_position(float x, float y) {
@@ -71,8 +156,14 @@ void FireLine::set_position(float x, float y) {
 }
 
 void FireLine::tick() {
-    ;
     this->position.x -= this->dx;
+    this->line_coords.x1 = this->position.x;
+    this->line_coords.y1 = this->position.y;
+    this->line_coords.x2 = this->position.x + this->t_x;
+    this->line_coords.y2 = this->position.y + this->t_y;
     // this->position.y -= speed;
 }
 
+line_t FireLine::get_position(){
+    return this->line_coords;
+}

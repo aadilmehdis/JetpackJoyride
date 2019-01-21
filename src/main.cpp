@@ -7,6 +7,9 @@
 #include "ground.h"
 #include "tile.h"
 #include "window.h"
+#include "dragon.h"
+#include "fuelbullet.h"
+#include "coin.h"
 
 
 #include <vector>
@@ -25,6 +28,7 @@ FireLine ball1;
 FireLine ball2;
 Player player;
 Ground ground;
+Dragon dragon;
 
 long long int Frame=0;
 
@@ -32,9 +36,11 @@ vector<FireLine> fire_lines;
 vector<Boomerang> boomerangs;
 vector<Window> windows;
 vector<Tile> tiles;
+vector<FuelBullet> fuel_bullets;
+vector<Coin> coins;
 
 
-float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
+float screen_zoom = 1.0, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 
 Timer t60(1.0 / 60);
@@ -73,6 +79,7 @@ void draw() {
     // Scene render
     // ball1.draw(VP);
     // ball2.draw(VP);
+
     ground.draw(VP);
     for(int i=0; i<windows.size(); ++i)
     {
@@ -82,8 +89,6 @@ void draw() {
     {
         tiles[i].draw(VP);
     }
-    player.draw(VP);
-
     for(int i=0;i<fire_lines.size();++i)
     {
         fire_lines[i].draw(VP);
@@ -92,36 +97,68 @@ void draw() {
     {
         boomerangs[i].draw(VP);
     }
-
+    for(int i=0; i<fuel_bullets.size(); ++i)
+    {
+        fuel_bullets[i].draw(VP);
+    }
+    for(int i=0; i<coins.size(); ++i)
+    {
+        coins[i].draw(VP);
+    }
+    player.draw(VP);
+    dragon.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
     int left    = glfwGetKey(window, GLFW_KEY_LEFT);
+
     int right   = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up      = glfwGetKey(window, GLFW_KEY_UP);
     if (up) {
-        player.dy -= 0.002;
-    }
-    cout<<player.dx;
-    if(left) {
-        if(player.dx == -0.01)
+        player.dy -= 0.005;
+        if(Frame%10 == 0)
         {
-            player.dx = 0;
+            fuel_bullets.push_back(FuelBullet(player.position.x-0.3, player.position.y-0.6, COLOR_GOLD));
         }
-        else
-        {
-            player.dx = 0.01;
-        }  
+    }
+    if(left) {
+        player.position.x -= player.dx; 
     }
     if(right) {
-        if(player.dx == 0.01)
+        if(player.position.x <= (0-1.0))
         {
-            player.dx = 0;
+            player.position.x += player.dx;   
         }
         else
         {
-            player.dx = -0.01;
-        }  
+            Frame += 1;
+            for(int i=0;i<fire_lines.size();++i)
+            {
+                // fire_lines[i].dx += player.dx;
+                fire_lines[i].dx = 2*player.dx;
+
+            } 
+            for(int i=0;i<boomerangs.size();++i)
+            {
+                // boomerangs[i].dx = player.dx;
+                // boomerangs[i].dx = 2*player.dx;
+            }  
+            for(int i=0;i<windows.size();++i)
+            {
+                // windows[i].dx += player.dx;
+                windows[i].dx = 2*player.dx;
+            }
+            for(int i=0;i<tiles.size();++i)
+            {
+                // tiles[i].dx += player.dx;
+                tiles[i].dx = 2*player.dx;
+            } 
+            for(int i=0;i<coins.size();++i)
+            {
+                // coins[i].dx += player.dx;
+                coins[i].dx = 2*player.dx;
+            } 
+        }
     }
 }
 
@@ -154,7 +191,45 @@ void update_object_vectors() {
             tiles.erase(tiles.begin() + i );
         }
     }
+    for(int i=0;i<fuel_bullets.size();++i)
+    {
+        if(fuel_bullets[i].position.y < -2.5)
+        {
+            fuel_bullets.erase(fuel_bullets.begin() + i );
+        }
+    }
+    for(int i=0;i<coins.size();++i)
+    {
+        if(coins[i].position.y < -2.5)
+        {
+            coins.erase(coins.begin() + i );
+        }
+
+        //check for collision here itself for collecting coins. and erasing them.
+    }
 }
+
+void make_rectangle_coins() {
+    float coin_space = 0.21;
+    int y_pos = rand()%4 + (0);
+    for(int i=0; i<9; ++i)
+    {
+        for(int j=0 ; j<3; ++j)
+        {
+            int toss = rand()%15 + (0);
+            if(toss == 0)
+            {
+                coins.push_back(Coin(5 + i * coin_space, y_pos + j * coin_space, COLOR_CRIMSON, true));
+            }
+            else 
+            {
+                coins.push_back(Coin(5 + i * coin_space, y_pos + j * coin_space, COLOR_GOLD, false));
+            }
+        }
+    }
+}
+
+
 
 void spawn_fire_lines() {
     if(Frame%200 == 0)
@@ -164,11 +239,32 @@ void spawn_fire_lines() {
     }
 }
 
+void spawn_coins() {
+    if(Frame%250 == 0)
+    {
+        make_rectangle_coins();
+        // int y_pos = rand()%4 + (0);
+        // if(Frame % 500 == 0)
+        // {
+        //     coins.push_back(Coin(5, y_pos, COLOR_CRIMSON, true));
+        //     coins.push_back(Coin(5.38, y_pos, COLOR_CRIMSON, true));
+
+
+        // }
+        // else 
+        // {
+        //     coins.push_back(Coin(5, y_pos, COLOR_GOLD, false));
+        // }
+    }
+}
+
+
 void spawn_boomerangs() {
-    if(Frame%500 == 0)
+    if(Frame%1500 == 0)
     {
         int y_pos = rand()%10 + (-2);
-        boomerangs.push_back(Boomerang(5, y_pos, COLOR_GREEN));
+        // boomerangs.push_back(Boomerang(5, y_pos, COLOR_GREEN));
+        boomerangs.push_back(Boomerang(12, 4, COLOR_GREEN));
     }
 }
 
@@ -181,42 +277,59 @@ void spawn_windows() {
 }
 
 void spawn_tiles() {
-    if(Frame%50 == 0)
+    if(Frame%200 == 0)
     {
-        int y_pos = rand()%10 + (-2);
-        tiles.push_back(Tile(5, y_pos, COLOR_GREEN));
+        tiles.push_back(Tile(5, -2.7, COLOR_GREEN));
     }
 }
 
 void spawn_game_elements() {
-    // spawn_fire_lines();
-    // spawn_boomerangs();
+    spawn_fire_lines();
+    spawn_boomerangs();
     spawn_windows();
     spawn_tiles();
-
+    spawn_coins();
 }
 
 
 void tick_elements() {
     // ball1.tick();
     // ball2.tick();
+    dragon.tick();
     ground.tick();
     player.tick();
+    cout<<"Player bbox \n x : "<<player.bbox.x<<"\n y : "<<player.bbox.y<<"\n x2 : "<<player.bbox.x+player.bbox.width<<"\n y2 : "<<player.bbox.y-player.bbox.height<<"\n";
     for(int i=0;i<fire_lines.size();++i)
     {
         fire_lines[i].tick();
+
+        if(detect_line_rectangle_collision(player.bbox, fire_lines[i].line_coords))
+        {
+            cout<<"Collision\n";
+        }
+        else{
+            cout<<"No Collision\n";
+        }
     }
     for(int i=0;i<boomerangs.size();++i)
     {
-        boomerangs[i].tick();
+        // boomerangs[i].tick();
     }
     for(int i=0;i<windows.size();++i)
     {
-        windows[i].tick();
+        // windows[i].tick();
     }
     for(int i=0;i<tiles.size();++i)
     {
-        tiles[i].tick();
+        // tiles[i].tick();
+    }
+    for(int i=0;i<fuel_bullets.size();++i)
+    {
+        // fuel_bullets[i].tick();
+    }
+    for(int i=0;i<coins.size();++i)
+    {
+        // coins[i].tick();
     }
     camera_rotation_angle += 1;
 }
@@ -227,13 +340,20 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
 
-    player = Player(0, 0, COLOR_BLACK);
+    player = Player(-3.0, 0, COLOR_BLACK);
     ground = Ground(-4, -4, COLOR_BLACK);
+    dragon = Dragon(2,10,COLOR_BLACK);
     windows.push_back(Window(0, -1.5, COLOR_GREEN));
+
+    // tiles.push_back(Tile(-4, -3.5, COLOR_GREEN));
+    // tiles.push_back(Tile(-2.5, -3.5, COLOR_GREEN));
+    // tiles.push_back(Tile(-1, -3.5, COLOR_GREEN));
+    // tiles.push_back(Tile(1.5, -3.5, COLOR_GREEN));
+
     // ball1       = FireLine(0, 0, COLOR_RED);
     // ball2       = FireLine(0.5, 0.5, COLOR_GREEN);
-    // fire_lines.push_back(FireLine(0, 0, COLOR_RED));
-    // fire_lines.push_back(FireLine(0.5, 0.5, COLOR_GREEN));
+    fire_lines.push_back(FireLine(-2, 0, COLOR_RED));
+    // fire_lines.push_back(FireLine(-1, -1, COLOR_GREEN));
     // fire_lines.push_back(FireLine(1, 1, COLOR_BLACK));
 
     // Create and compile our GLSL program from the shaders
@@ -260,7 +380,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 1000;
+    int width  = 800;
     int height = 600;
 
     window = initGLFW(width, height);
@@ -302,6 +422,46 @@ bool detect_collision(bounding_box_t a, bounding_box_t b) {
     return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
            (abs(a.y - b.y) * 2 < (a.height + b.height));
 }
+
+
+
+bool detect_line_line_collision(float p0_x, float p0_y, float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y) 
+{
+    float s1_x, s1_y, s2_x, s2_y;
+    s1_x = p1_x - p0_x;     s1_y = p1_y - p0_y;
+    s2_x = p3_x - p2_x;     s2_y = p3_y - p2_y;
+
+    float s, t;
+    s = (-s1_y * (p0_x - p2_x) + s1_x * (p0_y - p2_y)) / (-s2_x * s1_y + s1_x * s2_y);
+    t = ( s2_x * (p0_y - p2_y) - s2_y * (p0_x - p2_x)) / (-s2_x * s1_y + s1_x * s2_y);
+
+    if (s >= 0 && s <= 1 && t >= 0 && t <= 1)
+    {
+        return true;
+    }
+    return false;
+}
+
+
+bool detect_line_rectangle_collision(bounding_box_t a, line_t b) 
+{
+    bool left = detect_line_line_collision(a.x , a.y, a.x, a.y - a.height, b.x1, b.y1, b.x2, b.y2);
+    bool right = detect_line_line_collision(a.x + a.width , a.y, a.x + a.width, a.y - a.height, b.x1, b.y1, b.x2, b.y2);
+    bool up = detect_line_line_collision(a.x , a.y, a.x+ a.width, a.y, b.x1, b.y1, b.x2, b.y2);
+    bool down = detect_line_line_collision(a.x , a.y  - a.height, a.x+ a.width, a.y - a.height, b.x1, b.y1, b.x2, b.y2);
+
+    if(left || right || up || down)
+    {
+        cout<<"left : "<<left<<endl;
+        cout<<"right : "<<right<<endl;
+        cout<<"up : "<<up<<endl;
+        cout<<"down : "<<down<<endl;
+        return true;
+    }
+    return false;
+}
+
+
 
 void reset_screen() {
     float top    = screen_center_y + 4 / screen_zoom;

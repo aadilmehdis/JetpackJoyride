@@ -12,15 +12,19 @@ Tile::Tile(float x, float y, color_t color )
 
     GLfloat vertex_buffer_data[] = {
         0.0f, 0.0f, 0.0f,
-        8.0f, 0.0f, 0.f,
-        0.0f, 1.5f, 0.f,
+        2.0f, 0.0f, 0.f,
+        1.0f, -2.0f, 0.f,
 
-        8.0f, 1.5f, 0.0f,
-        8.0f, 0.0f, 0.f,
-        0.0f, 1.5f, 0.f,
-
+        1.0f, -2.0f, 0.f,
+        0.0f, 0.0f, 0.0f,
+        -1.0f, -2.0f, 0.0f,
     };
-    this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, color, GL_FILL);
+
+    for(int i=0;i<6*3;++i)
+    {
+        vertex_buffer_data[i] /=2;
+    }
+    this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, COLOR_TILE, GL_FILL);
 }
 
 void Tile::draw(glm::mat4 VP) {
@@ -40,6 +44,6 @@ void Tile::set_position(float x, float y) {
 }
 
 void Tile::tick() {
-    // this->position.x -= 0.001;
+    this->position.x -= 0.01;
 }
 

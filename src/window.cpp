@@ -6,7 +6,7 @@ Window::Window(float x, float y, color_t color )
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->dx = 0;
+    this->dx = 0.01;
     this->dy = 0;
     this->gravity = 0.001;
 
@@ -20,7 +20,7 @@ Window::Window(float x, float y, color_t color )
         0.0f, 4.0f, 0.f,
 
     };
-    this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, COLOR_YELLOW, GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, COLOR_WINDOW, GL_FILL);
 }
 
 void Window::draw(glm::mat4 VP) {
@@ -40,6 +40,6 @@ void Window::set_position(float x, float y) {
 }
 
 void Window::tick() {
-    this->position.x -= 0.01;
+    this->position.x -= this->dx;
 }
 

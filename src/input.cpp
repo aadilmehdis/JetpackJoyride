@@ -12,10 +12,22 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "main.h"
+#include "window.h"
+#include "fireline.h"
+#include "tile.h"
+#include "boomerang.h"
+#include "coin.h"
 
 bool   cannon_keyboard_input = true;
 bool   drag_pan = false, old_cki;
 double drag_oldx = -1, drag_oldy = -1;
+
+extern std::vector<Window> windows;
+extern std::vector<Boomerang> boomerangs;
+extern std::vector<Tile> tiles;
+extern std::vector<FireLine> fire_lines;
+extern std::vector<Coin> coins;
+
 
 using namespace std;
 
@@ -25,6 +37,26 @@ void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
     // Function is called first on GLFW_PRESS.
 
     if (action == GLFW_RELEASE) {
+            for(int i=0;i<fire_lines.size();++i)
+            {
+                fire_lines[i].dx = 0.01;
+            } 
+            // for(int i=0;i<boomerangs.size();++i)
+            // {
+            //     boomerangs[i].dx = 0.01;
+            // }  
+            for(int i=0;i<windows.size();++i)
+            {
+                windows[i].dx = 0.01;
+            }
+            for(int i=0;i<tiles.size();++i)
+            {
+                tiles[i].dx = 0.01;
+            }
+            for(int i=0;i<coins.size();++i)
+            {
+                coins[i].dx = 0.01;
+            }  
         // switch (key) {
         // case GLFW_KEY_C:
         // rectangle_rot_status = !rectangle_rot_status;
@@ -84,4 +116,6 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods) {
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
     // Do something
+    screen_zoom += 0.1;
+    std::cout<<"scrolled" << yoffset << "\n";
 }
