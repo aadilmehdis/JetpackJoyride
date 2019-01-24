@@ -1111,6 +1111,33 @@ src/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
 
+src/waterball.o: src/waterball.cpp.o
+
+.PHONY : src/waterball.o
+
+# target to build an object file
+src/waterball.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o
+.PHONY : src/waterball.cpp.o
+
+src/waterball.i: src/waterball.cpp.i
+
+.PHONY : src/waterball.i
+
+# target to preprocess a source file
+src/waterball.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.i
+.PHONY : src/waterball.cpp.i
+
+src/waterball.s: src/waterball.cpp.s
+
+.PHONY : src/waterball.s
+
+# target to generate assembly for a file
+src/waterball.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.s
+.PHONY : src/waterball.cpp.s
+
 src/window.o: src/window.cpp.o
 
 .PHONY : src/window.o
@@ -1241,6 +1268,9 @@ help:
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"
+	@echo "... src/waterball.o"
+	@echo "... src/waterball.i"
+	@echo "... src/waterball.s"
 	@echo "... src/window.o"
 	@echo "... src/window.i"
 	@echo "... src/window.s"

@@ -23,6 +23,7 @@ public:
     double dy;
     double gravity;
     bool danger;
+    bool destroyed;
     line_t line_coords;
 
 private:

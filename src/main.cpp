@@ -14,6 +14,7 @@
 #include "magnet.h"
 #include "powerup.h"
 #include "ssd.h"
+#include "waterball.h"
 
 
 #include <vector>
@@ -32,6 +33,7 @@ Player player;
 Ground ground;
 
 
+
 long long int Frame=0;
 
 vector<FireLine> fire_lines;
@@ -39,6 +41,7 @@ vector<Boomerang> boomerangs;
 vector<Window> windows;
 vector<Tile> tiles;
 vector<FuelBullet> fuel_bullets;
+vector<WaterBall> water_balls;
 vector<Coin> coins;
 vector<FireBeam> fire_beams;
 vector<Magnet> magnets;
@@ -122,6 +125,10 @@ void draw() {
     {
         fuel_bullets[i].draw(VP);
     }
+    for(int i=0; i<water_balls.size(); ++i)
+    {
+        water_balls[i].draw(VP);
+    }
     for(int i=0; i<coins.size(); ++i)
     {
         coins[i].draw(VP);
@@ -137,14 +144,22 @@ void draw() {
     {
         ssd[i].draw(VP);
     }
+
 }
 
 void tick_input(GLFWwindow *window) {
-    int left    = glfwGetKey(window, GLFW_KEY_LEFT);
+    int left        = glfwGetKey(window, GLFW_KEY_LEFT);
+    int right       = glfwGetKey(window, GLFW_KEY_RIGHT);
+    int up          = glfwGetKey(window, GLFW_KEY_UP);
+    int down        = glfwGetKey(window, GLFW_KEY_DOWN);
+    int shoot       = glfwGetKey(window, GLFW_KEY_S);
 
-    int right   = glfwGetKey(window, GLFW_KEY_RIGHT);
-    int up      = glfwGetKey(window, GLFW_KEY_UP);
-    int down      = glfwGetKey(window, GLFW_KEY_DOWN);
+    if(shoot) {
+        if(Frame%10 == 0)
+        {
+            water_balls.push_back(WaterBall(player.position.x+0.3, player.position.y));
+        }
+    }
     if (up) {
         player.dy -= 0.005;
         if(Frame%10 == 0)
@@ -270,6 +285,28 @@ void update_object_vectors() {
             fuel_bullets.erase(fuel_bullets.begin() + i );
         }
     }
+    for(int i=0;i<water_balls.size();++i)
+    {
+        bool balloon_burst = false;
+        for(int j=0;j<fire_lines.size();++j)
+        {
+            cout<<"hey ya\n";
+            if(detect_line_rectangle_collision(water_balls[i].bbox, fire_lines[i].line_coords))
+            {
+                cout<<"collided\n";
+
+                water_balls.erase(water_balls.begin() + i );
+                fire_lines[i].destroyed = true;
+                balloon_burst = true;
+                break;
+            }
+        }
+        if(balloon_burst) continue;
+        if(water_balls[i].position.y < -2.5)
+        {
+            water_balls.erase(water_balls.begin() + i );
+        }
+    }
     for(int i=0;i<coins.size();++i)
     {
         if(coins[i].position.x < -5 || detect_collision(player.bbox, coins[i].bbox))
@@ -302,7 +339,6 @@ void make_rectangle_coins() {
 }
 
 void make_ring_coins() {
-    cout<<"In here\n";
     float coin_space = 0.36;
     int y_pos = rand()%4 + (0);
     for(int i=0; i<6; ++i)
@@ -440,9 +476,10 @@ void spawn_game_elements() {
 
 
 void tick_elements() {
+
+
     ground.tick();
     player.tick();
-    cout<<"Player bbox \n x : "<<player.bbox.x<<"\n y : "<<player.bbox.y<<"\n x2 : "<<player.bbox.x+player.bbox.width<<"\n y2 : "<<player.bbox.y-player.bbox.height<<"\n";
     for(int i=0;i<fire_lines.size();++i)
     {
         fire_lines[i].tick();
@@ -451,10 +488,7 @@ void tick_elements() {
 
         if(detect_line_rectangle_collision(player.bbox, fire_lines[i].line_coords) && !player.immunity)
         {
-            cout<<"Collision\n";
-        }
-        else{
-            cout<<"No Collision\n";
+            player.life--;
         }
     }
     for(int i=0;i<fire_beams.size();++i)
@@ -473,10 +507,7 @@ void tick_elements() {
 
         if(detect_collision(player.bbox, fire_beams[i].bbox) && !player.immunity)
         {
-            cout<<"Collision with Beam\n";
-        }
-        else{
-            cout<<"No Collision with Beam\n";
+            player.life--;
         }
     }
     for(int i=0;i<magnets.size();++i)
@@ -522,6 +553,10 @@ void tick_elements() {
     {
         fuel_bullets[i].tick();
     }
+    for(int i=0;i<water_balls.size();++i)
+    {
+        water_balls[i].tick();
+    }
     for(int i=0;i<coins.size();++i)
     {
         coins[i].tick();
@@ -560,6 +595,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
     player = Player(-3.0, 0, COLOR_BLACK);
     ground = Ground(-4, -4, COLOR_BLACK);
+
     windows.push_back(Window(0, -1.5, COLOR_GREEN));
 
     for(int i=0;i<10;++i)
@@ -618,7 +654,7 @@ int main(int argc, char **argv) {
             ++Frame;
             set_score();
 
-            
+
             reset_screen();
             tick_input(window);
 
@@ -676,10 +712,6 @@ bool detect_line_rectangle_collision(bounding_box_t a, line_t b)
 
     if(left || right || up || down)
     {
-        cout<<"left : "<<left<<endl;
-        cout<<"right : "<<right<<endl;
-        cout<<"up : "<<up<<endl;
-        cout<<"down : "<<down<<endl;
         return true;
     }
     return false;

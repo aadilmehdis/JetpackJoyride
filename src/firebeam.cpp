@@ -15,6 +15,7 @@ FireBeam::FireBeam(float x, float y, color_t color )
     this->danger = false;
     this->immunity = false;
     this->life = 0;
+    this->destroyed=false;
     
 
 
@@ -140,24 +141,30 @@ void FireBeam::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    if(!this->immunity)
+    if(this->destroyed)
     {
-        if(this->timer % 400 > 180)
-        {
-            draw3DObject(this->line1);
-            draw3DObject(this->line2);
-            this->danger = true;
-        }
-        else 
-        {
-            this->danger = false;
-        }
+        draw3DObject(this->circle1);
+        draw3DObject(this->circle2);
     }
+    else
+    {    
+        if(!this->immunity)
+        {
+            if(this->timer % 400 > 180)
+            {
+                draw3DObject(this->line1);
+                draw3DObject(this->line2);
+                this->danger = true;
+            }
+            else 
+            {
+                this->danger = false;
+            }
+        }
 
-    draw3DObject(this->circle1);
-    draw3DObject(this->circle2);
-
-
+        draw3DObject(this->circle1);
+        draw3DObject(this->circle2);
+    }
 }
 
 void FireBeam::set_position(float x, float y) {

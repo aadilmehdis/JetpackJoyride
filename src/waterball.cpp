@@ -4,11 +4,11 @@
 WaterBall::WaterBall(float x, float y) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->dx = 0.01;
+    this->dx = -0.07;
     this->dy = 0;
-    this->gravity = 0;
+    this->gravity = 0.001;
 
-    this->radius = 0.2;
+    this->radius = 0.1;
 
     this->bbox.x = x; 
     this->bbox.y = y;
@@ -45,7 +45,13 @@ WaterBall::WaterBall(float x, float y) {
 		yy = g_vertex_buffer_data1[i+7];
     }
     GLfloat g_vertex_buffer_data2[] = {
-        
+        0.0f,-0.14f,0.0f,
+        0.2f,-0.14f,0.0f,
+        0.1f,-0.3f,0.0f,
+        0.1f,-0.3f,0.0f,
+        0.075f,-0.35f,0.0f,
+        0.125f,-0.35f,0.0f,
+
     };
     for(int i=0; i<9*N;++i)
     {
@@ -58,8 +64,8 @@ WaterBall::WaterBall(float x, float y) {
             g_vertex_buffer_data1[i] -= this->radius;
         }
     }
-    this->ball = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_data1, color, GL_FILL);
-    // this->bound = create3DObject(GL_LINE_LOOP, 4, g_vertex_buffer_data2, color, GL_FILL);
+    this->ball = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_data1, COLOR_CYAN, GL_FILL);
+    this->tip = create3DObject(GL_TRIANGLES, 6, g_vertex_buffer_data2, COLOR_CYAN, GL_FILL);
 }
 
 void WaterBall::draw(glm::mat4 VP) {
@@ -71,8 +77,8 @@ void WaterBall::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->object);
-    // draw3DObject(this->bound);
+    draw3DObject(this->ball);
+    draw3DObject(this->tip);
 }
 
 void WaterBall::set_position(float x, float y) {
@@ -81,6 +87,8 @@ void WaterBall::set_position(float x, float y) {
 
 void WaterBall::tick() {
     this->position.x -= dx;
+    this->dy += this->gravity;
+    this->position.y -= dy;
     this->bbox.x = this->position.x;
     this->bbox.y = this->position.y;
 }

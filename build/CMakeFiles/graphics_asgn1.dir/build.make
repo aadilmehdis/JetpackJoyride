@@ -304,9 +304,22 @@ CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/timer.cpp -o CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
 
+CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o: ../src/waterball.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o -c /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/waterball.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/waterball.cpp > CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/waterball.cpp -o CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.s
+
 CMakeFiles/graphics_asgn1.dir/src/window.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/window.cpp.o: ../src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/window.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/window.cpp.o -c /Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/src/window.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/window.cpp.i: cmake_force
@@ -338,6 +351,7 @@ graphics_asgn1_OBJECTS = \
 "CMakeFiles/graphics_asgn1.dir/src/ssd.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/window.cpp.o"
 
 # External object files for target graphics_asgn1
@@ -362,6 +376,7 @@ graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/ssd.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/tile.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/waterball.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/window.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/build.make
 graphics_asgn1: external/glfw-3.1.2/src/libglfw3.a
@@ -369,7 +384,7 @@ graphics_asgn1: external/libGLEW_1130.a
 graphics_asgn1: external/glfw-3.1.2/src/libglfw3.a
 graphics_asgn1: external/libGLEW_1130.a
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable graphics_asgn1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aadilmehdi/Semester4/Graphics/Assignments/Assignment1/JetpackJoyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable graphics_asgn1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphics_asgn1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -30,6 +30,7 @@ public:
     long long int life;
     double start_y;
     bool immunity;
+    bool destroyed;
 
 private:
     VAO *circle1;
