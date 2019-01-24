@@ -17,6 +17,7 @@
 #include "tile.h"
 #include "boomerang.h"
 #include "coin.h"
+#include "magnet.h"
 
 bool   cannon_keyboard_input = true;
 bool   drag_pan = false, old_cki;
@@ -27,6 +28,7 @@ extern std::vector<Boomerang> boomerangs;
 extern std::vector<Tile> tiles;
 extern std::vector<FireLine> fire_lines;
 extern std::vector<Coin> coins;
+extern std::vector<Magnet> magnets;
 
 
 using namespace std;
@@ -56,6 +58,10 @@ void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
             for(int i=0;i<coins.size();++i)
             {
                 coins[i].dx = 0.01;
+            }  
+            for(int i=0;i<magnets.size();++i)
+            {
+                magnets[i].dx = 0.01;
             }  
         // switch (key) {
         // case GLFW_KEY_C:

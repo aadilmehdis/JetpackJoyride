@@ -9,6 +9,13 @@ Player::Player(float x, float y, color_t color )
     this->dx = 0.02;
     this->dy = 0;
     this->gravity = 0.001;
+    this->score = 0;
+
+    this->magenetic_power = false;
+    this->immunity = false;
+    this->magenetic_power_timer = 0;
+    this->immunity_timer = 0;
+    this->life = 3;
 
 
     this->bbox.x = x;
@@ -201,6 +208,27 @@ void Player::set_position(float x, float y) {
 }
 
 void Player::tick() {
+
+    if(this->magenetic_power)
+    {
+        this->magenetic_power_timer +=1;
+        if(this->magenetic_power_timer == 300)
+        {
+            this->magenetic_power_timer = 0;
+            this->magenetic_power = false;
+        }
+    }
+    if(this->immunity)
+    {
+        this->immunity_timer += 1;
+        if(this->immunity_timer == 300)
+        {
+            this->immunity_timer = 0;
+            this->immunity = false;
+        }
+    }
+
+
     this->position.y -= dy;
     if(this->position.y < -1.35)
     {

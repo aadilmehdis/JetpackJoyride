@@ -27,6 +27,7 @@ private:
     VAO *coin;
     VAO *life_boost;
     VAO *immune_boost;
+    VAO *magnet_boost;
 };
 
 #endif // BALL_H

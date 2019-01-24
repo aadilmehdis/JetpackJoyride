@@ -29,6 +29,7 @@ public:
     bool danger;
     long long int life;
     double start_y;
+    bool immunity;
 
 private:
     VAO *circle1;

@@ -1030,6 +1030,33 @@ src/powerup.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.s
 .PHONY : src/powerup.cpp.s
 
+src/ssd.o: src/ssd.cpp.o
+
+.PHONY : src/ssd.o
+
+# target to build an object file
+src/ssd.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ssd.cpp.o
+.PHONY : src/ssd.cpp.o
+
+src/ssd.i: src/ssd.cpp.i
+
+.PHONY : src/ssd.i
+
+# target to preprocess a source file
+src/ssd.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ssd.cpp.i
+.PHONY : src/ssd.cpp.i
+
+src/ssd.s: src/ssd.cpp.s
+
+.PHONY : src/ssd.s
+
+# target to generate assembly for a file
+src/ssd.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ssd.cpp.s
+.PHONY : src/ssd.cpp.s
+
 src/tile.o: src/tile.cpp.o
 
 .PHONY : src/tile.o
@@ -1205,6 +1232,9 @@ help:
 	@echo "... src/powerup.o"
 	@echo "... src/powerup.i"
 	@echo "... src/powerup.s"
+	@echo "... src/ssd.o"
+	@echo "... src/ssd.i"
+	@echo "... src/ssd.s"
 	@echo "... src/tile.o"
 	@echo "... src/tile.i"
 	@echo "... src/tile.s"

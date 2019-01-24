@@ -22,6 +22,7 @@ public:
     double dx;
     double dy;
     double gravity;
+    bool danger;
     line_t line_coords;
 
 private:

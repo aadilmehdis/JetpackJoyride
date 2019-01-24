@@ -18,6 +18,14 @@ public:
     double dx;
     double dy;
     double gravity;
+    long long int score;
+
+    bool magenetic_power;
+    bool immunity;
+    int life;
+    int magenetic_power_timer;
+    int immunity_timer;
+    
     bounding_box_t bbox;
 
 private:

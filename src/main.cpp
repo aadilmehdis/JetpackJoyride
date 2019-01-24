@@ -13,6 +13,7 @@
 #include "firebeam.h"
 #include "magnet.h"
 #include "powerup.h"
+#include "ssd.h"
 
 
 #include <vector>
@@ -43,6 +44,7 @@ vector<FireBeam> fire_beams;
 vector<Magnet> magnets;
 vector<Dragon> dragons;
 vector<PowerUp> powerups;
+vector<SSD> ssd;
 
 
 float screen_zoom = 1.00, screen_center_x = 0, screen_center_y = 0;
@@ -126,7 +128,13 @@ void draw() {
     {
         powerups[i].draw(VP);
     }
+
     player.draw(VP);
+
+    for(int i=0;i<ssd.size();++i)
+    {
+        ssd[i].draw(VP);
+    }
 }
 
 void tick_input(GLFWwindow *window) {
@@ -134,12 +142,16 @@ void tick_input(GLFWwindow *window) {
 
     int right   = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up      = glfwGetKey(window, GLFW_KEY_UP);
+    int down      = glfwGetKey(window, GLFW_KEY_DOWN);
     if (up) {
         player.dy -= 0.005;
         if(Frame%10 == 0)
         {
             fuel_bullets.push_back(FuelBullet(player.position.x, player.position.y-0.8, COLOR_GOLD));
         }
+    }
+    if(down) {
+        player.dy += 0.002;
     }
     if(left) {
         player.position.x -= player.dx; 
@@ -154,29 +166,23 @@ void tick_input(GLFWwindow *window) {
             Frame += 1;
             for(int i=0;i<fire_lines.size();++i)
             {
-                // fire_lines[i].dx += player.dx;
                 fire_lines[i].dx = 2*player.dx;
-
             } 
-            for(int i=0;i<boomerangs.size();++i)
-            {
-                // boomerangs[i].dx = player.dx;
-                // boomerangs[i].dx = 2*player.dx;
-            }  
             for(int i=0;i<windows.size();++i)
             {
-                // windows[i].dx += player.dx;
                 windows[i].dx = 2*player.dx;
             }
             for(int i=0;i<tiles.size();++i)
             {
-                // tiles[i].dx += player.dx;
                 tiles[i].dx = 2*player.dx;
             } 
             for(int i=0;i<coins.size();++i)
             {
-                // coins[i].dx += player.dx;
                 coins[i].dx = 2*player.dx;
+            } 
+            for(int i=0;i<magnets.size();++i)
+            {
+                magnets[i].dx = 2*player.dx;
             } 
         }
     }
@@ -187,6 +193,21 @@ void update_object_vectors() {
     {
         if(powerups[i].position.x < -6 || detect_collision(player.bbox, powerups[i].bbox))
         {
+            if(detect_collision(player.bbox, powerups[i].bbox))
+            {
+                if(powerups[i].type == 0)
+                {
+                    player.immunity = true;
+                }
+                else if(powerups[i].type == 1)
+                {
+                    player.life += 1;
+                }
+                else if(powerups[i].type == 2)
+                {
+                    player.magenetic_power = true;
+                }
+            }
             powerups.erase(powerups.begin() + i);
         }
     }
@@ -252,6 +273,7 @@ void update_object_vectors() {
         if(coins[i].position.x < -5 || detect_collision(player.bbox, coins[i].bbox))
         {
             coins.erase(coins.begin() + i );
+            player.score += 1;
         }
         //check for collision here itself for collecting coins. and erasing them.
     }
@@ -307,10 +329,32 @@ void make_ring_coins() {
     }
 }
 
+void set_score() {
+    int score_dig[]={0,0,0,0,0,0,0,0,0,0};
+    int score = player.score;
+    int i=0,j=0;
+    while(score != 0)
+    {
+        score_dig[i] = score%10;
+        score /= 10;
+        i++;
+    }
+    i=9;
+    while(score_dig[i]!=0)
+    {
+        --i;
+    }
+    while(i>=0)
+    {
+        ssd[j].set_digit(score_dig[i]);
+        --i;++j;
+    }
+}
+
 void spawn_powerups() {
     if(Frame%600 == 0)
     {
-        powerups.push_back(PowerUp(5, 0, COLOR_CRIMSON, rand()%2));
+        powerups.push_back(PowerUp(5, 0, COLOR_CRIMSON, 0));
     }
 }
 
@@ -335,7 +379,10 @@ void spawn_coins() {
 void spawn_magnets() {
     if(Frame%2000 == 0) 
     {
-        magnets.push_back(Magnet(5, -1, COLOR_BROWN));
+        if(rand()%2==0)
+            magnets.push_back(Magnet(5, 3.5, COLOR_BROWN));
+        else
+            magnets.push_back(Magnet(5, -2, COLOR_BROWN));
     }
 }
 
@@ -397,8 +444,10 @@ void tick_elements() {
     for(int i=0;i<fire_lines.size();++i)
     {
         fire_lines[i].tick();
+        if(player.immunity) fire_lines[i].danger = false;
+        else fire_lines[i].danger = true;
 
-        if(detect_line_rectangle_collision(player.bbox, fire_lines[i].line_coords))
+        if(detect_line_rectangle_collision(player.bbox, fire_lines[i].line_coords) && !player.immunity)
         {
             cout<<"Collision\n";
         }
@@ -409,7 +458,18 @@ void tick_elements() {
     for(int i=0;i<fire_beams.size();++i)
     {
         fire_beams[i].tick();
-        if(detect_collision(player.bbox, fire_beams[i].bbox) && fire_beams[i].danger)
+        if(player.immunity) 
+        {
+            fire_beams[i].danger = false;
+            fire_beams[i].immunity = true;
+        }
+        else 
+        {
+            fire_beams[i].danger = true;
+            fire_beams[i].immunity = false;
+        }
+
+        if(detect_collision(player.bbox, fire_beams[i].bbox) && !player.immunity)
         {
             cout<<"Collision with Beam\n";
         }
@@ -422,11 +482,21 @@ void tick_elements() {
         magnets[i].tick();
         if(magnets[i].position.x < player.position.x)
         {
-            player.position.x -= magnets[i].influence;
+            player.position.x -= 2*magnets[i].gravity;
         }
         else
         {
-            player.position.x += 2*magnets[i].influence;
+            player.position.x += 2*magnets[i].gravity;
+        }
+        if(magnets[i].position.y > 0)
+        {
+            // player.dy += magnets[i].influence;
+            player.dy -= magnets[i].influence;   
+
+        }
+        else
+        {
+            player.dy += magnets[i].influence;   
         }
     }
     
@@ -453,6 +523,25 @@ void tick_elements() {
     for(int i=0;i<coins.size();++i)
     {
         coins[i].tick();
+        if(player.magenetic_power)
+        {
+            if(coins[i].position.x > player.position.x)
+            {
+                coins[i].position.x -= 0.02;
+            }
+            else
+            {
+                coins[i].position.x += 0.02;
+            }
+            if(coins[i].position.y > player.position.y)
+            {
+                coins[i].position.y -= 0.02;
+            }
+            else
+            {
+                coins[i].position.y += 0.02;
+            }
+        }
     }
     for(int i=0;i<powerups.size();++i)
     {
@@ -470,6 +559,11 @@ void initGL(GLFWwindow *window, int width, int height) {
     player = Player(-3.0, 0, COLOR_BLACK);
     ground = Ground(-4, -4, COLOR_BLACK);
     windows.push_back(Window(0, -1.5, COLOR_GREEN));
+
+    for(int i=0;i<10;++i)
+    {
+        ssd.push_back(SSD(-4+i*0.2,4,COLOR_WHITE));        
+    }
 
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
@@ -520,6 +614,7 @@ int main(int argc, char **argv) {
             spawn_game_elements();
 
             ++Frame;
+            set_score();
 
 
             tick_input(window);

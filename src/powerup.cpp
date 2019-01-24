@@ -4,7 +4,7 @@
 PowerUp::PowerUp(float x, float y, color_t color, int type) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->dx = 0.01;
+    this->dx = 0.04;
     this->dy = 0;
     this->gravity = 0.01;
     this->oscillator = 0;
@@ -79,6 +79,15 @@ PowerUp::PowerUp(float x, float y, color_t color, int type) {
         0.2f,-0.35f,0.0f
     };
 
+    GLfloat g_vertex_buffer_magnet_boost[] = {
+        0.1f,-0.2f,0.0f,
+        0.3f,-0.2f,0.0f,
+        0.2f,-0.05f,0.0f,
+        0.1f,-0.2f,0.0f,
+        0.3f,-0.2f,0.0f,
+        0.2f,-0.35f,0.0f,
+    };
+
     for(int i=0; i<9*N;++i)
     {
         if(i%3 == 0)
@@ -93,6 +102,7 @@ PowerUp::PowerUp(float x, float y, color_t color, int type) {
     this->coin = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_data1, COLOR_NEON_GREEN, GL_FILL);
     this->immune_boost = create3DObject(GL_TRIANGLES, 12, g_vertex_buffer_immune_boost, COLOR_WHITE, GL_FILL);
     this->life_boost = create3DObject(GL_TRIANGLES, 9, g_vertex_buffer_life_boost, COLOR_YELLOW, GL_FILL);
+    this->magnet_boost = create3DObject(GL_TRIANGLES, 6, g_vertex_buffer_magnet_boost, COLOR_SILVER, GL_FILL);
 }
 
 void PowerUp::draw(glm::mat4 VP) {
@@ -109,9 +119,13 @@ void PowerUp::draw(glm::mat4 VP) {
     {
         draw3DObject(this->immune_boost);
     }
-    else
+    else if(type==1)
     {
         draw3DObject(this->life_boost);
+    }
+    else if(type==2)
+    {
+        draw3DObject(this->magnet_boost);
     }
 }
 

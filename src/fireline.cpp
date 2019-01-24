@@ -9,6 +9,7 @@ FireLine::FireLine(float x, float y, color_t color )
     this->dx = 0.01;
     this->dy = 0;
     this->gravity = 0;
+    this->danger = true;
 
     
     float end_x = rand()%(10) + (-5);
@@ -144,8 +145,11 @@ void FireLine::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->line2);
-    draw3DObject(this->line1);
+    if(this->danger)
+    {
+        draw3DObject(this->line2);
+        draw3DObject(this->line1);
+    }
     draw3DObject(this->circle1);
     draw3DObject(this->circle2);
 

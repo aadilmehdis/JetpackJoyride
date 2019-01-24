@@ -13,6 +13,7 @@ FireBeam::FireBeam(float x, float y, color_t color )
     this->oscillator = 0;
     this->timer = 0;
     this->danger = false;
+    this->immunity = false;
     this->life = 0;
     
 
@@ -139,15 +140,18 @@ void FireBeam::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    if(this->timer % 400 > 180)
+    if(!this->immunity)
     {
-        draw3DObject(this->line1);
-        draw3DObject(this->line2);
-        this->danger = true;
-    }
-    else 
-    {
-        this->danger = false;
+        if(this->timer % 400 > 180)
+        {
+            draw3DObject(this->line1);
+            draw3DObject(this->line2);
+            this->danger = true;
+        }
+        else 
+        {
+            this->danger = false;
+        }
     }
 
     draw3DObject(this->circle1);

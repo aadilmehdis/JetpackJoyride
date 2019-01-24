@@ -9,7 +9,7 @@ Magnet::Magnet(float x, float y, color_t color )
     this->dx = 0.01;
     this->dy = 0;
     this->gravity = 0.001;
-    this->influence = 0.002;
+    this->influence = 0.0015;
 
     GLfloat vertex_buffer_north[] = {
         0.0f, 0.0f, 0.0f,
