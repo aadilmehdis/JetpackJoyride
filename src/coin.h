@@ -15,13 +15,16 @@ public:
     void tick();
 
     float rotation;
+    float radius;
     double dx;
     double dy;
     double gravity;
     bool special_coin;
+    bounding_box_t bbox;
 
 private:
     VAO *object;
+    // VAO *bound;
 };
 
 #endif // BALL_H

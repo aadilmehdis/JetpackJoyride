@@ -19,12 +19,12 @@ public:
     double dx;
     double dy;
     double gravity;
+    long long int life;
 
 private:
     VAO *object;
     VAO *ears;
     VAO *eyes;
-    VAO *lin;
 };
 
 #endif // BALL_H

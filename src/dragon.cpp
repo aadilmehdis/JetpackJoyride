@@ -10,6 +10,7 @@ Dragon::Dragon(float x, float y, color_t color )
     this->dy = 0;
     this->gravity = 0.02;
     this->oscillator = 0;
+    this->life = 0;
 
     GLfloat vertex_buffer_data1[] = {
         //face
@@ -83,7 +84,7 @@ void Dragon::draw(glm::mat4 VP) {
     draw3DObject(this->object);
     draw3DObject(this->ears);
     draw3DObject(this->eyes);
-    draw3DObject(this->lin);
+    // draw3DObject(this->lin);
 }
 
 void Dragon::set_position(float x, float y) {
@@ -93,5 +94,6 @@ void Dragon::set_position(float x, float y) {
 void Dragon::tick() {
     this->oscillator += this->gravity;
     this->position.y = 2*sin(this->oscillator) + 1;
+    this->life +=1;
 }
 

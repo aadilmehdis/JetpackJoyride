@@ -8,14 +8,13 @@ Coin::Coin(float x, float y, color_t color, bool special) {
     this->dy = 0;
     this->gravity = 0;
     this->special_coin = special;
-    
-    float end_x = rand()%(10) + (-5);
-    float end_y = rand()%(10) + (0);
-    while(abs(end_x) == abs(end_y) && abs(end_x) > 5) {
-        end_x = rand()%(20) + (-10);
-    }
 
+    this->radius = 0.17;
 
+    this->bbox.x = x; 
+    this->bbox.y = y;
+    this->bbox.height = radius*2;
+    this->bbox.width = radius*2;
 
     int N=100;
 	double pi = 3.1415926535897932384626433;
@@ -27,7 +26,7 @@ Coin::Coin(float x, float y, color_t color, bool special) {
 
 	float xx, yy, xx2, yy2;
 	xx = 0.0f;
-	yy = 0.1f;
+	yy = radius;
 
 	for(int i=0;i<9*N;i+=9)
 	{
@@ -46,7 +45,26 @@ Coin::Coin(float x, float y, color_t color, bool special) {
 		xx = g_vertex_buffer_data1[i+6];
 		yy = g_vertex_buffer_data1[i+7];
     }
+    // GLfloat g_vertex_buffer_data2[] = {
+    //     0.0f,0.0f,0.0f,
+    //     this->bbox.width,0.0f, 0.0f,
+    //     this->bbox.width,-this->bbox.height, 0.0f,
+    //     0.0f,-this->bbox.height, 0.0f,
+
+    // };
+    for(int i=0; i<9*N;++i)
+    {
+        if(i%3 == 0)
+        {
+            g_vertex_buffer_data1[i] += this->radius;
+        }
+        else if(i%3 == 1)
+        {
+            g_vertex_buffer_data1[i] -= this->radius;
+        }
+    }
     this->object = create3DObject(GL_TRIANGLES, 3*N, g_vertex_buffer_data1, color, GL_FILL);
+    // this->bound = create3DObject(GL_LINE_LOOP, 4, g_vertex_buffer_data2, color, GL_FILL);
 }
 
 void Coin::draw(glm::mat4 VP) {
@@ -59,6 +77,7 @@ void Coin::draw(glm::mat4 VP) {
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
+    // draw3DObject(this->bound);
 }
 
 void Coin::set_position(float x, float y) {
@@ -67,5 +86,7 @@ void Coin::set_position(float x, float y) {
 
 void Coin::tick() {
     this->position.x -= dx;
+    this->bbox.x = this->position.x;
+    this->bbox.y = this->position.y;
 }
 

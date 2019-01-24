@@ -733,6 +733,33 @@ src/dragon.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/dragon.cpp.s
 .PHONY : src/dragon.cpp.s
 
+src/firebeam.o: src/firebeam.cpp.o
+
+.PHONY : src/firebeam.o
+
+# target to build an object file
+src/firebeam.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeam.cpp.o
+.PHONY : src/firebeam.cpp.o
+
+src/firebeam.i: src/firebeam.cpp.i
+
+.PHONY : src/firebeam.i
+
+# target to preprocess a source file
+src/firebeam.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeam.cpp.i
+.PHONY : src/firebeam.cpp.i
+
+src/firebeam.s: src/firebeam.cpp.s
+
+.PHONY : src/firebeam.s
+
+# target to generate assembly for a file
+src/firebeam.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeam.cpp.s
+.PHONY : src/firebeam.cpp.s
+
 src/fireline.o: src/fireline.cpp.o
 
 .PHONY : src/fireline.o
@@ -841,6 +868,33 @@ src/input.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/input.cpp.s
 .PHONY : src/input.cpp.s
 
+src/magnet.o: src/magnet.cpp.o
+
+.PHONY : src/magnet.o
+
+# target to build an object file
+src/magnet.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o
+.PHONY : src/magnet.cpp.o
+
+src/magnet.i: src/magnet.cpp.i
+
+.PHONY : src/magnet.i
+
+# target to preprocess a source file
+src/magnet.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.i
+.PHONY : src/magnet.cpp.i
+
+src/magnet.s: src/magnet.cpp.s
+
+.PHONY : src/magnet.s
+
+# target to generate assembly for a file
+src/magnet.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.s
+.PHONY : src/magnet.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -948,6 +1002,33 @@ src/player.s: src/player.cpp.s
 src/player.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
+
+src/powerup.o: src/powerup.cpp.o
+
+.PHONY : src/powerup.o
+
+# target to build an object file
+src/powerup.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.o
+.PHONY : src/powerup.cpp.o
+
+src/powerup.i: src/powerup.cpp.i
+
+.PHONY : src/powerup.i
+
+# target to preprocess a source file
+src/powerup.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.i
+.PHONY : src/powerup.cpp.i
+
+src/powerup.s: src/powerup.cpp.s
+
+.PHONY : src/powerup.s
+
+# target to generate assembly for a file
+src/powerup.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.s
+.PHONY : src/powerup.cpp.s
 
 src/tile.o: src/tile.cpp.o
 
@@ -1091,6 +1172,9 @@ help:
 	@echo "... src/dragon.o"
 	@echo "... src/dragon.i"
 	@echo "... src/dragon.s"
+	@echo "... src/firebeam.o"
+	@echo "... src/firebeam.i"
+	@echo "... src/firebeam.s"
 	@echo "... src/fireline.o"
 	@echo "... src/fireline.i"
 	@echo "... src/fireline.s"
@@ -1103,6 +1187,9 @@ help:
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
+	@echo "... src/magnet.o"
+	@echo "... src/magnet.i"
+	@echo "... src/magnet.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -1115,6 +1202,9 @@ help:
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"
+	@echo "... src/powerup.o"
+	@echo "... src/powerup.i"
+	@echo "... src/powerup.s"
 	@echo "... src/tile.o"
 	@echo "... src/tile.i"
 	@echo "... src/tile.s"
