@@ -30,6 +30,8 @@ extern std::vector<FireLine> fire_lines;
 extern std::vector<Coin> coins;
 extern std::vector<Magnet> magnets;
 
+extern float screen_zoom;
+
 
 using namespace std;
 
@@ -122,6 +124,18 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods) {
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
     // Do something
-    screen_zoom += 0.1;
-    std::cout<<"scrolled" << yoffset << "\n";
+    if(yoffset < 0)
+    {
+        if(screen_zoom < 1.3)
+        {
+            screen_zoom += 0.01;
+        }
+    }
+    else if(yoffset > 0)
+    {
+        if(screen_zoom > 1.0)
+        {
+            screen_zoom -= 0.01;
+        }
+    }
 }

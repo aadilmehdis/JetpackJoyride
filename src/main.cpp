@@ -48,6 +48,8 @@ vector<SSD> ssd;
 
 
 float screen_zoom = 1.00, screen_center_x = 0, screen_center_y = 0;
+
+
 float camera_rotation_angle = 0;
 
 Timer t60(1.0 / 60);
@@ -616,7 +618,8 @@ int main(int argc, char **argv) {
             ++Frame;
             set_score();
 
-
+            
+            reset_screen();
             tick_input(window);
 
         }
