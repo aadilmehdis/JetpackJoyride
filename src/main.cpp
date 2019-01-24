@@ -290,13 +290,21 @@ void update_object_vectors() {
         bool balloon_burst = false;
         for(int j=0;j<fire_lines.size();++j)
         {
-            cout<<"hey ya\n";
-            if(detect_line_rectangle_collision(water_balls[i].bbox, fire_lines[i].line_coords))
+            if(!fire_lines[i].destroyed && detect_line_rectangle_collision(water_balls[i].bbox, fire_lines[i].line_coords))
             {
-                cout<<"collided\n";
-
                 water_balls.erase(water_balls.begin() + i );
                 fire_lines[i].destroyed = true;
+                balloon_burst = true;
+                break;
+            }
+        }
+        if(balloon_burst) continue;
+        for(int j=0;j<fire_beams.size();++j)
+        {
+            if(!fire_beams[i].destroyed && detect_collision(water_balls[i].bbox, fire_beams[i].bbox))
+            {
+                water_balls.erase(water_balls.begin() + i );
+                fire_beams[i].destroyed = true;
                 balloon_burst = true;
                 break;
             }
