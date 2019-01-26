@@ -24,7 +24,7 @@ add "#define GLM_ENABLE_EXPERIMENTAL" in the files main.h nonedit.cpp other_hand
 - Seven Segment Score Display
 - Ice Balls
 - Good Representation of Characters
-- 
+
 
 
 
