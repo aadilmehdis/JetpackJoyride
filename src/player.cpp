@@ -10,18 +10,28 @@ Player::Player(float x, float y, color_t color )
     this->dy = 0;
     this->gravity = 0.001;
     this->score = 0;
+    this->ring_immune = false;
 
     this->magenetic_power = false;
     this->immunity = false;
+
+    this->ring_influence = false;
+    this->init_pos_x = 0;
+    this->init_pos_y = 0;
+    this->check = false;
+
+
     this->magenetic_power_timer = 0;
     this->immunity_timer = 0;
-    this->life = 3;
+    this->life = 5;
 
 
     this->bbox.x = x;
     this->bbox.y = y;
     this->bbox.height = 1.15;
     this->bbox.width = 0.60;
+
+    this->prev_pos_x = x;
     // this->bbox.x = x;
     // this->bbox.y = y;
     // this->bbox.height = 1;
@@ -208,48 +218,65 @@ void Player::set_position(float x, float y) {
 }
 
 void Player::tick() {
-
-    if(this->magenetic_power)
+    if(!this->ring_influence)
     {
-        this->magenetic_power_timer +=1;
-        if(this->magenetic_power_timer == 300)
+        if(this->magenetic_power)
         {
-            this->magenetic_power_timer = 0;
-            this->magenetic_power = false;
+            this->magenetic_power_timer +=1;
+            if(this->magenetic_power_timer == 300)
+            {
+                this->magenetic_power_timer = 0;
+                this->magenetic_power = false;
+            }
         }
-    }
-    if(this->immunity)
-    {
-        this->immunity_timer += 1;
-        if(this->immunity_timer == 300)
+        if(this->immunity)
         {
-            this->immunity_timer = 0;
-            this->immunity = false;
+            this->immunity_timer += 1;
+            if(this->immunity_timer == 300)
+            {
+                this->immunity_timer = 0;
+                this->immunity = false;
+            }
         }
-    }
 
 
-    this->position.y -= dy;
-    if(this->position.y < -1.35)
-    {
-        this->dy = 0;
-        this->position.y = -1.35;
+        this->position.y -= dy;
+        if(this->position.y < -1.35)
+        {
+            this->dy = 0;
+            this->position.y = -1.35;
+        }
+        else
+        {
+            this->dy += this->gravity;
+        }
+
+        if(this->position.y > 4)
+        {
+            this->position.y = 4;
+            this->dy = 0;
+        }
+        if(this->position.x < -4.0)
+        {
+        this->position.x = -4.0;
+        }
+        this->bbox.x = this->position.x;
+        this->bbox.y = this->position.y;
+        this->prev_pos_x = this->position.x;
     }
     else
     {
-        this->dy += this->gravity;
-    }
+        this->prev_pos_x += 0.02;
+        this->position.x += 0.02;
+        this->position.y = sqrt((1 - pow(this->position.x - this->init_pos_x + 1,2) )) + init_pos_y;
+        
+        if(isnan(this->position.y))
+        {
+            this->position.y = -1.35;
+            this->ring_influence = false;
+            this->ring_immune = false;
+        }
 
-    if(this->position.y > 4)
-    {
-        this->position.y = 4;
-        this->dy = 0;
     }
-    if(this->position.x < -4.0)
-    {
-       this->position.x = -4.0;
-    }
-    this->bbox.x = this->position.x;
-    this->bbox.y = this->position.y;
 }
 

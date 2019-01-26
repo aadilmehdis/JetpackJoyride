@@ -841,6 +841,33 @@ src/ground.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ground.cpp.s
 .PHONY : src/ground.cpp.s
 
+src/iceball.o: src/iceball.cpp.o
+
+.PHONY : src/iceball.o
+
+# target to build an object file
+src/iceball.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/iceball.cpp.o
+.PHONY : src/iceball.cpp.o
+
+src/iceball.i: src/iceball.cpp.i
+
+.PHONY : src/iceball.i
+
+# target to preprocess a source file
+src/iceball.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/iceball.cpp.i
+.PHONY : src/iceball.cpp.i
+
+src/iceball.s: src/iceball.cpp.s
+
+.PHONY : src/iceball.s
+
+# target to generate assembly for a file
+src/iceball.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/iceball.cpp.s
+.PHONY : src/iceball.cpp.s
+
 src/input.o: src/input.cpp.o
 
 .PHONY : src/input.o
@@ -1029,6 +1056,33 @@ src/powerup.s: src/powerup.cpp.s
 src/powerup.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/powerup.cpp.s
 .PHONY : src/powerup.cpp.s
+
+src/semicircularring.o: src/semicircularring.cpp.o
+
+.PHONY : src/semicircularring.o
+
+# target to build an object file
+src/semicircularring.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/semicircularring.cpp.o
+.PHONY : src/semicircularring.cpp.o
+
+src/semicircularring.i: src/semicircularring.cpp.i
+
+.PHONY : src/semicircularring.i
+
+# target to preprocess a source file
+src/semicircularring.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/semicircularring.cpp.i
+.PHONY : src/semicircularring.cpp.i
+
+src/semicircularring.s: src/semicircularring.cpp.s
+
+.PHONY : src/semicircularring.s
+
+# target to generate assembly for a file
+src/semicircularring.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/semicircularring.cpp.s
+.PHONY : src/semicircularring.cpp.s
 
 src/ssd.o: src/ssd.cpp.o
 
@@ -1238,6 +1292,9 @@ help:
 	@echo "... src/ground.o"
 	@echo "... src/ground.i"
 	@echo "... src/ground.s"
+	@echo "... src/iceball.o"
+	@echo "... src/iceball.i"
+	@echo "... src/iceball.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
@@ -1259,6 +1316,9 @@ help:
 	@echo "... src/powerup.o"
 	@echo "... src/powerup.i"
 	@echo "... src/powerup.s"
+	@echo "... src/semicircularring.o"
+	@echo "... src/semicircularring.i"
+	@echo "... src/semicircularring.s"
 	@echo "... src/ssd.o"
 	@echo "... src/ssd.i"
 	@echo "... src/ssd.s"

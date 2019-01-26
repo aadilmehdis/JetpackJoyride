@@ -18,6 +18,7 @@ public:
     double dx;
     double dy;
     double gravity;
+    bounding_box_t bbox;
 
 private:
     VAO *upperhead;

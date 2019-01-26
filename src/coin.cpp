@@ -85,6 +85,7 @@ void Coin::set_position(float x, float y) {
 }
 
 void Coin::tick() {
+    // this->rotation += 1; 
     this->position.x -= dx;
     this->bbox.x = this->position.x;
     this->bbox.y = this->position.y;

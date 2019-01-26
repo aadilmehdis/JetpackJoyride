@@ -22,9 +22,16 @@ public:
 
     bool magenetic_power;
     bool immunity;
+    bool ring_influence;
     int life;
     int magenetic_power_timer;
     int immunity_timer;
+    float init_pos_x;
+    float init_pos_y;
+    bool check;
+    bool ring_immune;
+    float prev_pos_x;
+
     
     bounding_box_t bbox;
 

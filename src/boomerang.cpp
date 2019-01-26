@@ -10,6 +10,11 @@ Boomerang::Boomerang(float x, float y, color_t color )
     this->dy = 0.006;
     this->gravity = 0.0001;
 
+    this->bbox.x = x;
+    this->bbox.y = y;
+    this->bbox.height = 0.50;
+    this->bbox.width = 0.50;
+
     GLfloat vertex_buffer_data1[] = {
 
         0.0f, 0.0f, 0.0f,
@@ -58,5 +63,7 @@ void Boomerang::tick() {
     this->position.y -= this->dy;
     this->dx += this->gravity;
     this->rotation += 1;
+    this->bbox.x = this->position.x;
+    this->bbox.y = this->position.y;
 }
 

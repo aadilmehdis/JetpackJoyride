@@ -12,12 +12,12 @@ Window::Window(float x, float y, color_t color )
 
     GLfloat vertex_buffer_data[] = {
         0.0f, 0.0f, 0.0f,
-        4.0f, 0.0f, 0.f,
-        0.0f, 4.0f, 0.f,
+        2.0f, 0.0f, 0.f,
+        0.0f, 8.0f, 0.f,
 
-        4.0f, 4.0f, 0.0f,
-        4.0f, 0.0f, 0.f,
-        0.0f, 4.0f, 0.f,
+        2.0f, 8.0f, 0.0f,
+        2.0f, 0.0f, 0.f,
+        0.0f, 8.0f, 0.f,
 
     };
     this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, COLOR_WINDOW, GL_FILL);

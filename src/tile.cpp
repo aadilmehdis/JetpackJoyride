@@ -6,7 +6,7 @@ Tile::Tile(float x, float y, color_t color )
 {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-    this->dx = 0;
+    this->dx = 0.01;
     this->dy = 0;
     this->gravity = 0.001;
 
@@ -44,6 +44,6 @@ void Tile::set_position(float x, float y) {
 }
 
 void Tile::tick() {
-    this->position.x -= 0.01;
+    this->position.x -= this->dx;
 }
 
