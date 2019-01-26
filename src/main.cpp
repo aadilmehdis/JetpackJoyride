@@ -593,7 +593,7 @@ void spawn_tiles() {
 }
 
 void spawn_fire_beams() {
-    if((Frame+1)%(1500/LEVEL) == 0)
+    if((Frame)%(1500/LEVEL) == 0)
     {
         fire_beams.push_back(FireBeam(-3.8, 0.8,COLOR_BLACK));
     }
@@ -659,19 +659,22 @@ void tick_elements() {
         fire_beams[i].tick();
         if(player.immunity) 
         {
-            fire_beams[i].danger = false;
+            // fire_beams[i].danger = false;
             fire_beams[i].immunity = true;
         }
         else 
         {
-            fire_beams[i].danger = true;
+            // fire_beams[i].danger = true;
             fire_beams[i].immunity = false;
         }
 
         if(detect_collision(player.bbox, fire_beams[i].bbox) && !player.immunity && !fire_beams[i].destroyed && !player.ring_immune)
         {
-            player.life--;
-            fire_beams.erase(fire_beams.begin() + i);
+            if(fire_beams[i].danger)
+            {
+                player.life--;
+                fire_beams.erase(fire_beams.begin() + i);
+            }
         }
     }
     for(int i=0;i<magnets.size();++i)
