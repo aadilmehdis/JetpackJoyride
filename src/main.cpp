@@ -842,7 +842,10 @@ int main(int argc, char **argv) {
             {
                 exit(0);
             }
+            char title[100];
+            sprintf(title,":: Jetpack Joyride :: Score : %lld Lives : %d", player.score, player.life);
 
+            glfwSetWindowTitle(window, title);
 
             reset_screen();
             tick_input(window);
